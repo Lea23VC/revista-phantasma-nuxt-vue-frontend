@@ -8,7 +8,11 @@ export default {
     './app.vue',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'libre-baskerville': 'Libre Baskerville',
+      },
+    },
   },
-  plugins: [],
+  plugins: [require('daisyui')],
 };

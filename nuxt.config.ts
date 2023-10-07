@@ -8,4 +8,11 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  modules: ['@nuxtjs/google-fonts'],
+  googleFonts: {
+    download: true,
+    families: {
+      'Libre Baskerville': true,
+    },
+  },
 });
