@@ -1,10 +1,10 @@
 <template>
   <!-- Section: Design Block -->
-  <section class="relative mb-40">
+  <section class="relative">
     <!-- Jumbotron -->
     <div
       :style="{ backgroundImage: `url('${backgroundImage}')` }"
-      class="bg-cover px-6 text-center dark:bg-neutral-900 lg:h-[calc(100vh-4rem)] h-[600px]"
+      class="bg-cover bg-fixed px-6 text-center dark:bg-neutral-900 lg:h-[calc(100vh-4rem)] h-[600px]"
     >
       <div
         class="bg-brown-transparent absolute left-1/4 top-[38%] h-56 w-1/2 z-10"

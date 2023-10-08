@@ -8,18 +8,12 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ["@nuxtjs/google-fonts", "nuxt-swiper"],
+  modules: ["@nuxtjs/google-fonts"],
   googleFonts: {
     download: true,
     families: {
       "Libre Baskerville": true,
+      Roboto: true,
     },
-  },
-  swiper: {
-    // Swiper options
-    //----------------------
-    // prefix: 'Swiper',
-    // styleLang: 'css',
-    // modules: ['navigation', 'pagination'], // all modules are imported by default
   },
 });
