@@ -30,7 +30,7 @@
             </div>
           </div>
           <div class="col-span-full">
-            <div class="flex flex-row justify-center">
+            <div class="flex flex-row justify-end">
               <div class="relative w-40">
                 <div
                   :style="{ backgroundColor: rightLineColor }"
@@ -50,7 +50,7 @@
           <h3
             class="mt-2 font-libre-baskerville text-lg text-right tracking-tight text-white md:text-xl xl:text-2xl"
           >
-            Revista / Dossier
+            {{ subtitle }}
           </h3>
         </div>
 
@@ -95,6 +95,7 @@ const firstText = ref('Phantasma');
 const secondText = ref('Phantasma');
 const leftLineColor = ref('white');
 const rightLineColor = ref('black');
+const subtitle = ref('Revista / Dossier');
 </script>
 
 <style scoped>
