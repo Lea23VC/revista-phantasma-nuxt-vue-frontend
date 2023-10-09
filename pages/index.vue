@@ -3,5 +3,6 @@
     <BannersMainBanner />
     <SliderHome />
     <SectionSocialMedia />
+    <SectionHomeBlogEntries />
   </div>
 </template>
