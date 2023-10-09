@@ -1,14 +1,24 @@
 <template>
   <div
+    class="relative bg-cover bg-center"
     :style="{
       backgroundImage: `url(${backgroundImage})`,
     }"
-    class="bg-cover"
   >
-    <div class="max-w-5xl m-auto py-20">
+    <div class="absolute inset-0 top-[50%] bg-black h-[50%]"></div>
+
+    <div class="max-w-5xl m-auto py-20 px-6 relative z-10">
       <div class="bg-black rounded-sm p-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
           <BlogItem v-for="(item, index) in items" :key="index" :item="item" />
+        </div>
+
+        <div class="text-center pt-16">
+          <button
+            class="btn btn-outline font-roboto font-thin border-white text-white"
+          >
+            Ver más
+          </button>
         </div>
       </div>
     </div>

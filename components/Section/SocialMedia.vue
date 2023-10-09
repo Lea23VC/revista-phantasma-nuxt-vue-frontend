@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col md:flex-row h-[500px] w-full -mt-2">
+  <div class="flex flex-col md:flex-row h-[700px] md:h-[500px] w-full -mt-2">
     <!-- Left side (1/3 width in desktop, full width in mobile) -->
     <div class="w-full md:w-[45%] bg-black relative h-full">
       <!-- Image layer -->

@@ -11,16 +11,18 @@
       :position="slide.position"
     >
       <!-- Slide content -->
-      <h3 class="text-white font-roboto font-bold text-center py-2">
+      <h3 class="text-white font-roboto font-bold text-center text-lg py-2">
         {{ slide.subtitle }}
       </h3>
       <h2
         v-html="slide.title"
-        class="text-white font-roboto font-bold text-center xl:text-7xl py-6"
+        class="text-white font-roboto font-bold text-center sm:text-7xl text-5xl py-4 sm:py-6"
       ></h2>
 
-      <div class="text-center">
-        <button class="btn btn-outline font-roboto font-thin">
+      <div class="text-center py-4 sm:py-0">
+        <button
+          class="btn btn-outline font-roboto font-thin border-white text-white"
+        >
           Leer más
         </button>
       </div>
