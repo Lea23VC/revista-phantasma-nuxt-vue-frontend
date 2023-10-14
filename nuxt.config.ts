@@ -41,4 +41,10 @@ export default defineNuxtConfig({
   build: {
     transpile: ["tslib"],
   },
+
+  routeRules: {
+    "/": {
+      prerender: true,
+    },
+  },
 });
