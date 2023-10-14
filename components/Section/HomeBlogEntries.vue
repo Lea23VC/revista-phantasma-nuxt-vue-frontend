@@ -26,6 +26,7 @@
 </template>
 
 <script lang="ts" setup>
+// @ts-ignore
 import GET_POST_QUERY from '../../graphql/Queries/getPosts.query.graphql';
 import { Post } from '../../ts/types/post.types';
 
