@@ -11,12 +11,30 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ["@nuxtjs/google-fonts"],
+  modules: ["@nuxtjs/google-fonts", "@nuxtjs/apollo"],
   googleFonts: {
     download: true,
     families: {
       "Libre Baskerville": true,
       Roboto: true,
+    },
+  },
+
+  apollo: {
+    clients: {
+      default: {
+        httpEndpoint: process.env.GRAPHQL_ENDPOINT as string,
+      },
+    },
+  },
+  build: {
+    // @ts-ignore
+    extend(config: any) {
+      config.module.rules.push({
+        test: /\.(graphql|gql)$/,
+        exclude: /node_modules/,
+        loader: "graphql-tag/loader",
+      });
     },
   },
 });

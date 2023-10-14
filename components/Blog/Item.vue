@@ -5,7 +5,7 @@
     >
       <div class="relative h-full p-6">
         <img
-          :src="item.featuredImage"
+          :src="item.featured_image.original_url"
           alt="Left Image"
           class="absolute inset-0 w-full h-full object-cover group-hover:scale-125 transition duration-500 cursor-pointer"
         />
@@ -16,11 +16,11 @@
           <div>
             <span
               ><p class="text-white font-roboto text-xs">
-                {{ item.author }}
+                {{ item.author.name }}
               </p></span
             ><span
               ><p class="text-white font-roboto text-xs">
-                {{ item.date }}
+                {{ item.publish_at }}
               </p></span
             >
           </div>
@@ -34,11 +34,11 @@
 </template>
 
 <script setup lang="ts">
-import { BlogItemType } from '../../ts/types/BlogItem.types';
+import { Post } from '../../ts/types/post.types';
 
 const { item } = defineProps({
   item: {
-    type: Object as PropType<BlogItemType>,
+    type: Object as PropType<Post>,
     required: true,
   },
 });

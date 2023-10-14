@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "@nuxtjs/apollo": "^5.0.0-alpha.7",
     "@nuxtjs/google-fonts": "^3.0.2",
     "autoprefixer": "^10.4.16",
     "daisyui": "^3.9.2",

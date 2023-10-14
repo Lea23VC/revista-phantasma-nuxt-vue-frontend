@@ -1,0 +1,27 @@
+query Posts {
+  posts {
+    data {
+      id
+      slug
+      publish_at
+      title
+      author {
+        name
+      }
+      featured_image {
+        id
+        updated_at
+        size
+        uuid
+        preview_url
+        original_url
+        responsive_images
+      }
+      attachments {
+        file {
+          original_url
+        }
+      }
+    }
+  }
+}
