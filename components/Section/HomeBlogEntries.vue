@@ -9,7 +9,7 @@
 
     <div class="max-w-5xl m-auto py-20 px-6 relative z-10">
       <div class="bg-black rounded-sm p-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10" v-if="data.posts">
           <BlogItem
             v-for="(item, index) in data.posts.data"
             :key="index"
@@ -34,7 +34,7 @@
 import GET_POST_QUERY from '../../graphql/Queries/getPosts.query.graphql';
 import { Post } from '../../ts/types/post.types';
 
-const { data } = await useAsyncQuery<{ posts: { data: Post[] } }>(
+const { data } = await useAsyncQuery<{ posts?: { data: Post[] } }>(
   GET_POST_QUERY,
 );
 
