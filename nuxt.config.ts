@@ -11,7 +11,7 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ["@nuxtjs/google-fonts", "@nuxtjs/apollo"],
+  modules: ["@nuxtjs/google-fonts", "@nuxtjs/apollo", "@nuxt/image"],
   googleFonts: {
     download: true,
     families: {
@@ -26,6 +26,9 @@ export default defineNuxtConfig({
         httpEndpoint: process.env.GRAPHQL_ENDPOINT as string,
       },
     },
+  },
+  image: {
+    domains: ["revista-phantasma-media.s3.amazonaws.com"],
   },
   // build: {
   //   // @ts-ignore

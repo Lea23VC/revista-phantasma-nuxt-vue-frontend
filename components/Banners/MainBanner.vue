@@ -56,7 +56,7 @@
 
         <!-- Image with higher z-index -->
         <div class="w-full">
-          <img
+          <NuxtImg
             class="z-20 relative h-40 xl:h-44 2xl:h-48"
             src="https://static.wixstatic.com/media/9b943a_337e63d1abe74f3a981d8ea605bdcd93~mv2.jpg/v1/crop/x_0,y_120,w_794,h_529/fill/w_368,h_245,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/fotos-de-fantasmas-de-principios-del-sig.jpg"
           />

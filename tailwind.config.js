@@ -12,6 +12,7 @@ export default {
       fontFamily: {
         "libre-baskerville": "Libre Baskerville",
         roboto: "Roboto",
+        "lulo-clean-one": "LuloCleanOne",
       },
     },
   },

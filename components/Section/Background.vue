@@ -1,6 +1,6 @@
 <template>
   <div class="relative h-[800px]">
-    <img
+    <NuxtImg
       :src="backgroundImage"
       class="absolute inset-0 w-full h-full object-cover"
     />

@@ -4,7 +4,7 @@
       class="md:h-[450px] aspect-square md:aspect-auto overflow-hidden group"
     >
       <div class="relative h-full p-6">
-        <img
+        <NuxtImg
           :src="item.featured_image.original_url"
           alt="Left Image"
           class="absolute inset-0 w-full h-full object-cover group-hover:scale-125 transition duration-500 cursor-pointer"

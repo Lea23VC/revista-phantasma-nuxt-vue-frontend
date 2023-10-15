@@ -9,7 +9,7 @@
 
     <div class="max-w-5xl m-auto py-20 px-6 relative z-10">
       <div class="bg-black rounded-sm p-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10" v-if="data.posts">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10" v-if="data?.posts">
           <BlogItem
             v-for="(item, index) in data.posts.data"
             :key="index"
@@ -41,6 +41,4 @@ const { data } = await useAsyncQuery<{ posts?: { data: Post[] } }>(
 const backgroundImage = ref(
   'https://static.wixstatic.com/media/9b943a_fdd9b4f4c3da4139a20e3bc9587b0b55~mv2.jpg',
 );
-
-console.log('dataAAAAAAAA: ', data);
 </script>

@@ -3,7 +3,7 @@
     <!-- Left side (1/3 width in desktop, full width in mobile) -->
     <div class="w-full md:w-[45%] bg-black relative h-full">
       <!-- Image layer -->
-      <img
+      <NuxtImg
         src="https://static.wixstatic.com/media/9b943a_19fc0ae0d178435db1526abfa009169a~mv2.jpeg/v1/crop/x_25,y_0,w_451,h_500,q_80,enc_auto/9b943a_19fc0ae0d178435db1526abfa009169a~mv2.jpeg"
         alt="Left Image"
         class="absolute inset-0 w-full h-full object-contain"
@@ -13,7 +13,7 @@
     <!-- Right side (2/3 width in desktop, full width in mobile) -->
     <div class="w-full md:w-[55%] relative h-full">
       <!-- Background image -->
-      <img
+      <NuxtImg
         src="https://static.wixstatic.com/media/9b943a_2e592c8477be429a8049e449835d5c36~mv2.png/v1/fill/w_676,h_511,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/9b943a_2e592c8477be429a8049e449835d5c36~mv2.png"
         alt="Background Image"
         class="absolute inset-0 w-full h-full object-cover"

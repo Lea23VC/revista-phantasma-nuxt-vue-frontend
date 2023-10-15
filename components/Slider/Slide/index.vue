@@ -2,7 +2,7 @@
   <div :id="name" class="carousel-item relative w-full h-[600px]">
     <!-- Background Image -->
     <div class="absolute h-full w-full">
-      <img :src="backgroundImage" class="object-cover h-full w-full" />
+      <NuxtImg :src="backgroundImage" class="object-cover h-full w-full" />
       <div
         class="absolute top-0 left-0 w-full h-full bg-black opacity-50"
       ></div>

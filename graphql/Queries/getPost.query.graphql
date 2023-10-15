@@ -1,0 +1,26 @@
+query Post($slug: String!) {
+  post(slug: $slug) {
+    id
+    slug
+    content
+    publish_at
+    title
+    author {
+      name
+    }
+    featured_image {
+      id
+      updated_at
+      size
+      uuid
+      preview_url
+      original_url
+      responsive_images
+    }
+    attachments {
+      file {
+        original_url
+      }
+    }
+  }
+}
