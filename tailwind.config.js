@@ -13,6 +13,10 @@ export default {
         "libre-baskerville": "Libre Baskerville",
         roboto: "Roboto",
         "lulo-clean-one": "LuloCleanOne",
+        avenir: "Avenir",
+      },
+      colors: {
+        "phantasma-gray": "rgba(232, 230, 230, 0.75)",
       },
     },
   },
