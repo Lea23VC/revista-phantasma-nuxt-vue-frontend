@@ -4,12 +4,12 @@
       <div class="flex-1">
         <NuxtLink
           to="/"
-          class="btn btn-ghost normal-case text-xl font-libre-baskerville"
+          class="btn btn-ghost normal-case text-xl font-libre-baskerville text-white"
         >
           {{ title }}
         </NuxtLink>
       </div>
-      <div class="flex-none z-10">
+      <div class="flex-none z-10 text-white">
         <ul class="menu menu-horizontal font-libre-baskerville">
           <li
             v-for="(link, index) in links"

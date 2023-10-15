@@ -2,7 +2,7 @@
   <div>
     <BannersMainBanner />
     <SliderHome />
-    <SectionSocialMedia />
+    <!-- <SectionSocialMedia /> -->
     <SectionHomeBlogEntries />
     <SectionBackground />
   </div>
