@@ -30,6 +30,14 @@
                 <div>
                   <BlogContent :content="post?.content" />
                 </div>
+
+                <div class="pt-10 pb-5">
+                  <div class="divider"></div>
+                </div>
+
+                <div>
+                  <SocialSharingLink url="google.cl" />
+                </div>
               </div>
             </div>
           </article>
@@ -58,6 +66,12 @@ const { data, error } = await useAsyncQuery<{ post?: Post }>(
 const post = data?.value?.post;
 
 let date: Ref<string> = ref('');
+
+const textToCopy = ref('Text you want to copy');
+
+function copyText() {
+  navigator.clipboard.writeText(textToCopy.value);
+}
 
 if (post?.publish_at) {
   date = ref(transformDate(post.publish_at));
