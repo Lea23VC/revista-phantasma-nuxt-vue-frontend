@@ -2,9 +2,12 @@
   <div class="navbar bg-black">
     <div class="max-w-7xl m-auto">
       <div class="flex-1">
-        <a class="btn btn-ghost normal-case text-xl font-libre-baskerville">
+        <NuxtLink
+          to="/"
+          class="btn btn-ghost normal-case text-xl font-libre-baskerville"
+        >
           {{ title }}
-        </a>
+        </NuxtLink>
       </div>
       <div class="flex-none z-10">
         <ul class="menu menu-horizontal font-libre-baskerville">
