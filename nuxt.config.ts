@@ -45,5 +45,5 @@ export default defineNuxtConfig({
     transpile: ["tslib"],
   },
 
-  routeRules: {},
+  routeRules: { "/*": { cors: true } },
 });
