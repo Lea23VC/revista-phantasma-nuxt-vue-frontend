@@ -1,5 +1,5 @@
-query Posts {
-  posts {
+query Posts($first: Int! = 10, $slug: [String] = []) {
+  posts(first: $first, slug: $slug) {
     data {
       id
       slug
@@ -11,16 +11,8 @@ query Posts {
       featured_image {
         id
         updated_at
-        size
-        uuid
         preview_url
-        original_url
         responsive_images
-      }
-      attachments {
-        file {
-          original_url
-        }
       }
     }
   }

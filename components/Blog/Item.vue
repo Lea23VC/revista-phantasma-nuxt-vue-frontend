@@ -1,31 +1,29 @@
 <template>
   <NuxtLink :to="'/post/' + item.slug">
-    <div
-      class="md:h-[450px] aspect-square md:aspect-auto overflow-hidden group"
-    >
+    <div class="item-height aspect-square md:aspect-auto overflow-hidden group">
       <div class="relative h-full p-6">
         <NuxtImg
-          :src="item.featured_image.original_url"
+          :src="item.featured_image.preview_url"
           alt="Left Image"
           class="absolute inset-0 w-full h-full object-cover group-hover:scale-125 transition duration-500 cursor-pointer"
         />
         <div
           class="absolute top-0 left-0 w-full h-full bg-black opacity-40"
         ></div>
-        <div class="relative grid content-between h-full">
+        <div class="relative grid content-between h-full font-avenir">
           <div>
             <span
-              ><p class="text-white font-roboto text-xs">
+              ><p class="text-white text-xs">
                 {{ item.author.name }}
               </p></span
             ><span
-              ><p class="text-white font-roboto text-xs">
+              ><p class="text-white text-xs">
                 {{ item.publish_at }}
               </p></span
             >
           </div>
           <div>
-            <h3 class="font-roboto text-2xl text-white">{{ item.title }}</h3>
+            <h3 class="text-2xl text-white">{{ item.title }}</h3>
           </div>
         </div>
       </div>
@@ -36,10 +34,22 @@
 <script setup lang="ts">
 import { Post } from '../../ts/types/post.types';
 
-const { item } = defineProps({
+const { item, height } = defineProps({
   item: {
     type: Object as PropType<Post>,
     required: true,
   },
+  height: {
+    type: String,
+    default: '450px',
+  },
 });
 </script>
+
+<style scoped>
+.item-height {
+  @media screen and (min-width: 768px) {
+    height: v-bind(height);
+  }
+}
+</style>
