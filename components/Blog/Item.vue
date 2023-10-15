@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink to="https://nuxtjs.org">
+  <NuxtLink :to="'/post/' + item.slug">
     <div
       class="md:h-[450px] aspect-square md:aspect-auto overflow-hidden group"
     >

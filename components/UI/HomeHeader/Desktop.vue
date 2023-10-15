@@ -19,11 +19,12 @@
               </summary>
               <ul class="p-2 bg-black text-white font-libre-baskerville">
                 <li v-for="child in link.children" :key="child.name">
-                  <a>{{ child.name }} </a>
+                  <NuxtLink :to="child.href">{{ child.name }} </NuxtLink>
                 </li>
               </ul>
             </details>
-            <a v-else>{{ link.name }}</a>
+
+            <NuxtLink :to="link.href" v-else>{{ link.name }}</NuxtLink>
           </li>
         </ul>
       </div>
