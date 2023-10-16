@@ -9,7 +9,7 @@ const title = ref('Revista Phantasma');
 const links = reactive([
   { name: 'Apariciones', href: '/phantasma/apariciones' },
   { name: 'Visiones', href: '/phantasma/visiones' },
-  { name: 'Espectos', href: '/phantasma/espectos' },
+  { name: 'Espectros', href: '/phantasma/espectros' },
   {
     name: 'Parapsicología',
     href: '/phantasma/parapsicologia',
