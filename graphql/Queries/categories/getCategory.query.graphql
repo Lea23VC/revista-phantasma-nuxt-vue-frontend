@@ -1,0 +1,27 @@
+query Category($slug: String!) {
+  category(slug: $slug) {
+    slug
+    name
+    id
+    background {
+      preview_url
+      original_url
+      responsive_images
+    }
+    posts {
+      id
+      slug
+      publish_at
+      title
+      author {
+        name
+      }
+      featured_image {
+        id
+        updated_at
+        preview_url
+        responsive_images
+      }
+    }
+  }
+}

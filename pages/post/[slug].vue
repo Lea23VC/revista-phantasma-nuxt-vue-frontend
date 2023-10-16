@@ -59,8 +59,8 @@
 
 <script lang="ts" setup>
 // @ts-ignore
-import GET_POST_QUERY from '../../graphql/Queries/getPost.query.graphql';
-import GET_POSTS_QUERY from '../../graphql/Queries/getPosts.query.graphql';
+import GET_POST_QUERY from '../../graphql/Queries/posts/getPost.query.graphql';
+import GET_POSTS_QUERY from '../../graphql/Queries/posts/getPosts.query.graphql';
 
 import { Post } from '../../ts/types/post.types';
 import { transformDate } from '../../utils/transformation/transformDate';
