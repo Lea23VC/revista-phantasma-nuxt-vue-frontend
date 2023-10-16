@@ -7,31 +7,33 @@
 <script setup lang="ts">
 const title = ref('Revista Phantasma');
 const links = reactive([
-  { name: 'Apariciones', href: '/' },
-  { name: 'Visiones', href: '/about' },
-  { name: 'Espectos', href: '/contact' },
+  { name: 'Apariciones', href: '/phantasma/apariciones' },
+  { name: 'Visiones', href: '/phantasma/visiones' },
+  { name: 'Espectos', href: '/phantasma/espectos' },
   {
     name: 'Parapsicología',
-    href: '/blog',
+    href: '/phantasma/parapsicologia',
   },
   {
     name: 'Psicofonías',
-    href: '/blog',
+    href: '/phantasma/psicofonias',
   },
   {
     name: 'Máquina Kirlian',
-    href: '/blog',
+    href: '/phantasma/maquina-kirlian',
   },
   {
     name: 'Más',
     children: [
-      { name: 'Convocatorias', href: '/login' },
-      { name: 'Formas y figuras', href: '/register' },
+      { name: 'Convocatorias', href: '/phantasma/convocatorias' },
+      { name: 'Formas y figuras', href: '/phantasma/formas-y-figuras' },
       {
         name: 'Números especiales',
+        href: '/phantasma/numeros-especiales',
       },
       {
         name: 'Editorial',
+        href: '/phantasma/editorial',
       },
     ],
   },

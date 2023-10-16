@@ -16,7 +16,13 @@
       ></div>
     </div>
 
-    <div class="max-w-5xl w-full h-full relative">
+    <div
+      class="relative sm:hidden font-lulo-clean-one text-4xl sm:text-2xl md:text-4xl lg:text-5xl gap-4 flex flex-col"
+    >
+      <h2 class="text-white">{{ name }}</h2>
+    </div>
+
+    <div class="max-w-5xl w-full h-full relative hidden sm:block">
       <div
         class="bg-brown-transparent absolute left-1/2 top-[60%] h-44 w-[397px]"
       ></div>
@@ -35,8 +41,12 @@
 </template>
 
 <script setup>
-const { backgroundImage } = defineProps({
+const { backgroundImage, name } = defineProps({
   backgroundImage: {
+    type: String,
+    required: true,
+  },
+  name: {
     type: String,
     required: true,
   },

@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar bg-black">
+  <div class="navbar bg-black text-white">
     <div class="navbar-start">
       <div class="dropdown">
         <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -23,12 +23,14 @@
           class="menu menu-sm dropdown-content mt-3 z-[99] p-2 shadow bg-black rounded-box w-52 font-libre-baskerville"
         >
           <li v-for="(link, index) in links" :key="index">
-            <a class="py-2">
+            <NuxtLink :to="link.href" class="py-2">
               {{ link.name }}
-            </a>
+            </NuxtLink>
             <ul class="p-2 bg-black" v-if="link.children">
               <li v-for="child in link.children" :key="child.name">
-                <a class="py-2">{{ child.name }} </a>
+                <NuxtLink :to="child.href" class="py-2"
+                  >{{ child.name }}
+                </NuxtLink>
               </li>
             </ul>
           </li>
@@ -38,9 +40,12 @@
           </li> -->
         </ul>
       </div>
-      <a class="btn btn-ghost normal-case text-xl font-libre-baskerville">
+      <NuxtLink
+        to="/"
+        class="btn btn-ghost normal-case text-xl font-libre-baskerville text-white"
+      >
         {{ title }}
-      </a>
+      </NuxtLink>
     </div>
   </div>
 </template>

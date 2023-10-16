@@ -2,16 +2,17 @@
   <div class="bg-black">
     <div>
       <BannersCategoryBanner
+        :name="category?.name"
         :backgroundImage="category?.background.original_url"
       />
     </div>
-    <div class="max-w-5xl m-auto pb-40">
-      <div class="pt-24">
-        <h1 class="text-[80px] text-white font-avenir font-bold">
+    <div class="max-w-5xl px-6 m-auto pb-40">
+      <div class="pt-24 hidden sm:block">
+        <h1 class="lg:text-[80px] text-5xl text-white font-avenir font-bold">
           {{ category?.name }}
         </h1>
 
-        <div class="w-1/5 pb-16 -mt-4">
+        <div class="w-1/5 -mt-4">
           <div class="divider before:bg-white before:h-2 after:h-0"></div>
         </div>
       </div>
