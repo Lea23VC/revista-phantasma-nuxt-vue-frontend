@@ -3,13 +3,13 @@
     class="relative w-full h-[300px] lg:h-[500px] grid place-items-center bg-fixed bg-cover bg-center"
   >
     <!-- Background Image -->
-    <div class="absolute h-full w-full">
+    <div class="absolute h-full w-full z-0">
       <NuxtImg
         :src="backgroundImage"
         quality="60"
         width="1920"
         :placeholder="blur"
-        class="object-cover h-full w-full -z-10"
+        class="object-cover h-full w-full"
       />
       <div
         class="absolute top-0 left-0 w-full h-full bg-black opacity-30"
@@ -23,15 +23,15 @@
     </div>
 
     <div class="max-w-5xl w-full h-full relative hidden sm:block">
-      <div
-        class="bg-brown-transparent absolute left-1/2 top-[60%] h-44 w-[397px]"
-      ></div>
-      <div class="absolute -bottom-24 right-0">
+      <div class="absolute left-1/2 top-[60%] h-44 w-[397px]">
+        <div class="bg-brown-transparent z-10 h-full"></div>
+      </div>
+      <div class="absolute -bottom-24 right-0 z-50">
         <NuxtImg
           :src="backgroundImage"
           width="397"
           height="236"
-          class="h-[236px] w-[397px] object-cover z-20"
+          class="h-[236px] w-[397px] object-cover"
           :placeholder="blur"
         />
       </div>
@@ -57,4 +57,8 @@ const { backgroundImage, name, blur } = defineProps({
 });
 </script>
 
-<style></style>
+<style scoped>
+.bg-brown-transparent {
+  background-color: rgba(78, 78, 69, 0.5); /* Brown color with 50% opacity */
+}
+</style>
