@@ -2,7 +2,12 @@
   <div class="relative w-full h-[300px] lg:h-[500px] grid place-items-center">
     <!-- Background Image -->
     <div class="absolute h-full w-full">
-      <NuxtImg :src="backgroundImage" class="object-cover h-full w-full" />
+      <NuxtImg
+        placeholder
+        :src="backgroundImage"
+        class="object-cover h-full w-full"
+        :placeholder="blur"
+      />
       <div
         class="absolute top-0 left-0 w-full h-full bg-black opacity-30"
       ></div>
@@ -20,10 +25,13 @@
 </template>
 
 <script setup>
-const { backgroundImage } = defineProps({
+const { backgroundImage, blur } = defineProps({
   backgroundImage: {
     type: String,
     required: true,
+  },
+  blur: {
+    type: String,
   },
 });
 </script>

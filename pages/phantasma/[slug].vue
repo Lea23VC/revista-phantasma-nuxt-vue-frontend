@@ -4,6 +4,10 @@
       <BannersCategoryBanner
         :name="category?.name"
         :backgroundImage="category?.background.original_url"
+        :blur="
+          category?.background.responsive_images.media_library_original
+            ?.base64svg
+        "
       />
     </div>
     <div class="max-w-5xl px-6 m-auto pb-40">

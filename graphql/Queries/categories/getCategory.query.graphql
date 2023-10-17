@@ -6,7 +6,12 @@ query Category($slug: String!) {
     background {
       preview_url
       original_url
-      responsive_images
+      responsive_images {
+        media_library_original {
+          base64svg
+          urls
+        }
+      }
     }
     posts {
       id
@@ -20,7 +25,12 @@ query Category($slug: String!) {
         id
         updated_at
         preview_url
-        responsive_images
+        responsive_images {
+          media_library_original {
+            base64svg
+            urls
+          }
+        }
       }
     }
   }

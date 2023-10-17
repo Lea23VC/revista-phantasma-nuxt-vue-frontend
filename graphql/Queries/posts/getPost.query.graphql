@@ -15,7 +15,12 @@ query Post($slug: String!) {
       uuid
       preview_url
       original_url
-      responsive_images
+      responsive_images {
+        media_library_original {
+          base64svg
+          urls
+        }
+      }
     }
     attachments {
       file {

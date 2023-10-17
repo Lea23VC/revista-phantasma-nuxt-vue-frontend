@@ -2,6 +2,9 @@
   <div class="">
     <BannersSinglePostBanner
       :backgroundImage="post?.featured_image.original_url"
+      :blur="
+        post?.featured_image.responsive_images.media_library_original?.base64svg
+      "
     />
   </div>
   <div class="bg-black">

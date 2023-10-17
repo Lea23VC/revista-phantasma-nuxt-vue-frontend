@@ -9,10 +9,18 @@ export type Media = {
   size: number;
   manipulations: string[];
   custom_properties: string[];
-  responsive_images: string[];
+  responsive_images: ResponsiveImages;
   order_column: number;
   created_at: string;
   updated_at: string;
   original_url: string;
   preview_url: string;
+};
+
+type ResponsiveImages = {
+  media_library_original?: MediaLibraryOriginal;
+};
+type MediaLibraryOriginal = {
+  base64svg: string;
+  urls: string[];
 };
