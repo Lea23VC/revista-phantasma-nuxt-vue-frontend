@@ -27,6 +27,6 @@ export type Post = {
   publish_at: string;
   attachments: Attachment[];
   featured_image: Media;
-  author: Author;
+  author?: Author;
   categories: Category[];
 };

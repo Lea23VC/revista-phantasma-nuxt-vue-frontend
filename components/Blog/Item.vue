@@ -14,7 +14,7 @@
           <div>
             <span
               ><p class="text-white text-xs">
-                {{ item.author.name }}
+                {{ item?.author?.name }}
               </p></span
             ><span
               ><p class="text-white text-xs">

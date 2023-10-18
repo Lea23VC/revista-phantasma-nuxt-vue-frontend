@@ -16,7 +16,7 @@
               <div>
                 <PostAuthorData
                   v-if="post"
-                  :authorName="post?.author.name"
+                  :authorName="post?.author?.name"
                   :date="post?.publish_at"
                 />
 
