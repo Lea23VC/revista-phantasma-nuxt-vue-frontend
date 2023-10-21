@@ -36,7 +36,7 @@ const { url } = defineProps({
   },
 });
 
-const socialMedias = reactive([
+const socialMedias = [
   {
     name: 'facebook',
     Icon: SVGIconFB,
@@ -47,7 +47,7 @@ const socialMedias = reactive([
     Icon: SVGIconTwitter,
     tooltipMessage: 'Compartir en Twitter',
   },
-]);
+];
 
 const textToCopy = url;
 

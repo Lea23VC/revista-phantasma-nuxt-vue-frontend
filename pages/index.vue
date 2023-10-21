@@ -5,6 +5,7 @@
     <!-- <SectionSocialMedia /> -->
     <SectionHomeBlogEntries />
     <SectionBackground />
+    <SliderQuotes />
   </div>
 </template>
 

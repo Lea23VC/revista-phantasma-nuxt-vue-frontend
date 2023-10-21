@@ -15,7 +15,12 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ["@nuxtjs/google-fonts", "@nuxtjs/apollo", "@nuxt/image"],
+  modules: [
+    "@nuxtjs/google-fonts",
+    "@nuxtjs/apollo",
+    "@nuxt/image",
+    "nuxt-swiper",
+  ],
   googleFonts: {
     download: true,
     families: {

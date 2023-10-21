@@ -1,5 +1,5 @@
 <template>
-  <div :id="name" class="carousel-item relative w-full h-[600px]">
+  <div :id="name" class="relative w-full h-full">
     <!-- Background Image -->
     <div class="absolute h-full w-full">
       <NuxtImg :src="backgroundImage" class="object-cover h-full w-full" />
@@ -9,47 +9,48 @@
     </div>
 
     <!-- Slide Content -->
-    <div class="relative w-full">
-      <div :class="`absolute p-16 ${twSlidePosition}`">
+    <div class="relative w-full h-full">
+      <div :style="slideContentStyles" :class="`absolute p-20`">
         <slot />
       </div>
-    </div>
-
-    <!-- Navigation Arrows -->
-    <div
-      class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
-    >
-      <a :href="prevSlideRef" class="btn btn-circle">❮</a>
-      <a :href="nextSlideRef" class="btn btn-circle">❯</a>
     </div>
   </div>
 </template>
 
-<script setup>
-const { name, backgroundImage, prevSlide, nextSlide, position } = defineProps({
-  name: String,
-  backgroundImage: String,
-  prevSlide: String,
-  nextSlide: String,
-  position: String,
+<script setup lang="ts">
+const { name, backgroundImage, position } = defineProps({
+  name: {
+    type: String,
+    required: true,
+  },
+  backgroundImage: {
+    type: String,
+    required: true,
+  },
+  position: {
+    type: String,
+    required: true,
+  },
 });
 
-const prevSlideRef = ref('#' + prevSlide);
-const nextSlideRef = ref('#' + nextSlide);
-
-// Calculate Tailwind CSS class for slide position
-let twSlidePosition = '';
-let twTextAlign = '';
+let slideContentStyles = {};
 
 switch (position) {
   case 'center':
-    twSlidePosition = 'top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2';
-    twTextAlign = 'text-center';
+    slideContentStyles = {
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      textAlign: 'center',
+    };
     break;
 
   case 'top right':
-    twSlidePosition = 'top-2 right-2';
-    twTextAlign = 'text-right';
+    slideContentStyles = {
+      top: '0.5rem',
+      right: '0.5rem',
+      textAlign: 'right',
+    };
     break;
 }
 </script>
