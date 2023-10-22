@@ -23,8 +23,10 @@ query Post($slug: String!) {
       }
     }
     attachments {
-      file {
+      title
+      files {
         original_url
+        file_name
       }
     }
   }

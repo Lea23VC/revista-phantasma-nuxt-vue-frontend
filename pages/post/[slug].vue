@@ -26,6 +26,18 @@
                   </h1>
                 </div>
 
+                <div v-for="(attachment, index) in post?.attachments">
+                  <a
+                    :href="file.original_url"
+                    target="_blank"
+                    class="border border-gray-200"
+                    v-for="(file, index) in attachment.files"
+                  >
+                    <div></div>
+                    <div>{{ file.file_name }}</div>
+                  </a>
+                </div>
+
                 <div>
                   <PostContent :content="post?.content" />
                 </div>
@@ -89,4 +101,7 @@ const [
 
 const post = data?.value?.post;
 const posts = otherPostsData?.value?.posts?.data;
+
+console.log('post: ', post);
+console.log('error: ', error);
 </script>
