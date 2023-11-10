@@ -26,16 +26,54 @@
                   </h1>
                 </div>
 
-                <div v-for="(attachment, index) in post?.attachments">
-                  <a
-                    :href="file.original_url"
-                    target="_blank"
-                    class="border border-gray-200"
-                    v-for="(file, index) in attachment.files"
-                  >
-                    <div></div>
-                    <div>{{ file.file_name }}</div>
-                  </a>
+                <div
+                  v-for="(attachment, index) in post?.attachments"
+                  class="pb-8"
+                >
+                  <div class="pb-8" v-html="attachment.description"></div>
+                  <div v-for="(file, index) in attachment.files" :key="index">
+                    <div
+                      :key="index"
+                      class="mb-4 flex items-center justify-between bg-white p-8 pl-10 border rounded-lg"
+                    >
+                      <div class="max-w-[60%]">
+                        <div class="pb-1">
+                          <span class="text-gray-700 font-semibold">{{
+                            file.name
+                          }}</span>
+                        </div>
+                        <div>
+                          <div class="flex gap-2">
+                            <div>
+                              Descargar {{ getFileExtension(file.file_name) }}
+                            </div>
+                            <div>•</div>
+                            <div>{{ (file.size / 1048576).toFixed(2) }} MB</div>
+                          </div>
+                        </div>
+                      </div>
+                      <a :href="file.original_url" target="_blank" download>
+                        <button
+                          class="flex items-center px-3 py-2 transition-colors text-white hover:text-black bg-black hover:bg-white rounded-md font-medium hover:border-black hover:border"
+                        >
+                          Descargar
+                          <svg
+                            class="ml-2 w-4 h-4"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M12 4v16m8-8H4"
+                            ></path>
+                          </svg></button
+                      ></a>
+                    </div>
+                  </div>
                 </div>
 
                 <div>
@@ -76,7 +114,7 @@
 // @ts-ignore
 import GET_POST_QUERY from '../../graphql/Queries/posts/getPost.query.graphql';
 import GET_POSTS_QUERY from '../../graphql/Queries/posts/getPosts.query.graphql';
-
+import { getFileExtension } from '@/utils/transformation/getFileExtention';
 import { Post } from '../../ts/types/post.types';
 import { transformDate } from '../../utils/transformation/transformDate';
 // @ts-ignore

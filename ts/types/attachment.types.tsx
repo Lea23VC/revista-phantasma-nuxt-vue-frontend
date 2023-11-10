@@ -6,6 +6,7 @@ export type Attachment = {
   description: string;
   post?: Post;
   files: Media[];
+  position: "start" | "end";
   created_at: string;
   updated_at: string;
 };

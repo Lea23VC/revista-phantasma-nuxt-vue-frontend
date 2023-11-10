@@ -3,7 +3,7 @@
     <div class="flex gap-4">
       <div v-for="(social, index) in socialMedias" :key="index">
         <div class="tooltip" :data-tip="social.tooltipMessage">
-          <ShareNetwork :network="social.name" :url="url">
+          <ShareNetwork :title="social.name" :network="social.name" :url="url">
             <component
               :is="social.Icon"
               class="text-black hover:text-blue-600 transition-colors"

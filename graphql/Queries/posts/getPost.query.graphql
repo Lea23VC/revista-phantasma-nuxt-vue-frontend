@@ -24,9 +24,13 @@ query Post($slug: String!) {
     }
     attachments {
       title
+      description
+      position
       files {
+        name
         original_url
         file_name
+        size
       }
     }
   }
