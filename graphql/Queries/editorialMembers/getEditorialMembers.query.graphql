@@ -1,0 +1,8 @@
+query EditorialMembers {
+  editorialMembers {
+    email
+    id
+    name
+    position
+  }
+}
