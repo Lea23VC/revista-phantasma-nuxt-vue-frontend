@@ -1,8 +1,12 @@
 query EditorialMembers {
   editorialMembers {
-    email
     id
     name
+    email
     position
+    author {
+      id
+      name
+    }
   }
 }

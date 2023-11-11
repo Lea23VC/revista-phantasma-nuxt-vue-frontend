@@ -33,13 +33,13 @@
       </SwiperSlide>
 
       <SwiperSlide>
-        <SliderSlidev
+        <SliderSlide
           name="slide-1"
           background-image="https://static.wixstatic.com/media/9b943a_e4ff24076c5d42a3af0972798d0081aa~mv2.jpg"
           position="center"
         >
           sdsd
-        </SliderSlidev>
+        </SliderSlide>
       </SwiperSlide>
 
       <!-- useSwiper() within a swiper instance -->

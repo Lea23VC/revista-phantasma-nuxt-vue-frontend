@@ -1,0 +1,22 @@
+query Page($slug: String!) {
+  page(slug: $slug) {
+    background_image {
+      id
+      updated_at
+      size
+      uuid
+      preview_url
+      original_url
+      responsive_images {
+        media_library_original {
+          base64svg
+          urls
+        }
+      }
+    }
+    id
+    slug
+    title
+    content
+  }
+}

@@ -33,7 +33,7 @@ const links = reactive([
       },
       {
         name: 'Editorial',
-        href: '/phantasma/editorial',
+        href: '/editorial',
       },
     ],
   },
