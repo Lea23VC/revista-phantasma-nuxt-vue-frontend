@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative w-full h-[300px] lg:h-[500px] grid place-items-center bg-fixed bg-cover bg-center"
+    class="relative w-full h-[300px] lg:h-[400px] grid place-items-center bg-fixed bg-cover bg-center"
   >
     <!-- Background Image -->
     <div class="absolute h-full w-full z-0">
@@ -23,7 +23,7 @@
     </div>
 
     <div class="max-w-5xl w-full h-full relative hidden sm:block">
-      <div class="absolute left-1/2 top-[60%] h-44 w-[397px]">
+      <div class="absolute left-1/2 top-[50%] h-44 w-[397px]">
         <div class="bg-brown-transparent z-10 h-full"></div>
       </div>
       <div class="absolute -bottom-24 right-0 z-50">

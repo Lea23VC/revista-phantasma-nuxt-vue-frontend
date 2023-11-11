@@ -12,7 +12,9 @@
     </div>
     <div class="max-w-5xl px-6 m-auto pb-40">
       <div class="pt-24 hidden sm:block">
-        <h1 class="lg:text-[80px] text-5xl text-white font-avenir font-bold">
+        <h1
+          class="lg:text-[80px] text-5xl text-white font-avenir font-bold pb-4"
+        >
           {{ category?.name }}
         </h1>
 

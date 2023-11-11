@@ -17,6 +17,7 @@ export default {
       },
       colors: {
         "phantasma-gray": "rgba(232, 230, 230, 0.75)",
+        "phantasma-light-blue": "#36B5CD",
       },
     },
   },

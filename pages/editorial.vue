@@ -1,4 +1,52 @@
-<template></template>
+<template>
+  <div class="bg-black">
+    <BannersCategoryBanner
+      :backgroundImage="pageData.page?.background_image?.original_url"
+      :blur="
+        pageData.page?.background_image?.responsive_images
+          .media_library_original?.base64svg
+      "
+    />
+
+    <div class="max-w-5xl px-6 m-auto pb-40">
+      <div class="pt-24 hidden sm:block pb-20">
+        <h1
+          class="lg:text-[80px] text-5xl text-white font-avenir font-bold pb-4"
+        >
+          Editorial
+        </h1>
+
+        <div class="w-1/5 -mt-4">
+          <div class="divider before:bg-white before:h-2 after:h-0"></div>
+        </div>
+      </div>
+
+      <div class="pb-6">
+        <h2 class="text-white font-avenir font-bold text-4xl">Coordinación</h2>
+      </div>
+      <div>
+        <div class="grid grid-cols-2 gap-16">
+          <div
+            v-for="(member, index) in editorialMembersData.editorialMembers"
+            :key="index"
+          >
+            <div>
+              <h3
+                class="font-avenir font-bold text-2xl text-phantasma-light-blue pb-4"
+              >
+                {{ member.position }}
+              </h3>
+
+              <h3 class="font-avenir font-bold text-2xl text-white">
+                {{ member.name }}
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div></template
+>
 
 <script lang="ts" setup>
 import PAGE_QUERY from '@/graphql/Queries/pages/getPage.query.graphql';
@@ -17,9 +65,4 @@ const [
     EDITORIAL_MEMBERS_QUERY,
   ), // Execute other query
 ]);
-
-console.log(
-  'editorialMembersData: ',
-  editorialMembersData.value.editorialMembers,
-);
 </script>
