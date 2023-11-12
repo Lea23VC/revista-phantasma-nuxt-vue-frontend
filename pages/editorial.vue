@@ -30,23 +30,12 @@
             v-for="(member, index) in editorialMembersData.editorialMembers"
             :key="index"
           >
-            <div>
-              <h3
-                class="font-avenir font-bold text-2xl text-phantasma-light-blue pb-4"
-              >
-                {{ member.position }}
-              </h3>
-
-              <h3 class="font-avenir font-bold text-2xl text-white">
-                {{ member.name }}
-              </h3>
-            </div>
+            <SectionMember :member="member" />
           </div>
         </div>
       </div>
-    </div>
-  </div></template
->
+    </div></div
+></template>
 
 <script lang="ts" setup>
 import PAGE_QUERY from '@/graphql/Queries/pages/getPage.query.graphql';
