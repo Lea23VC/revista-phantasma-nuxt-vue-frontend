@@ -1,0 +1,10 @@
+#import "../../Fragments/posts/postsDetails.fragment.graphql"
+
+query Author($id: ID!) {
+  author(id: $id) {
+    name
+    posts {
+      ...PostsDetails
+    }
+  }
+}

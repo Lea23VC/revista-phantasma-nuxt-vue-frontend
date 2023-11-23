@@ -1,5 +1,5 @@
 <template>
-  <div v-html="content"></div>
+  <div class="font-avenir !text-black" v-html="content"></div>
 </template>
 
 <script setup>
@@ -19,5 +19,6 @@ const { content } = defineProps({
 :deep(p) {
   font-family: 'Avenir', sans-serif !important;
   line-height: 1.5;
+  padding: 10px;
 }
 </style>

@@ -34,9 +34,11 @@
 import GET_POST_QUERY from '../../graphql/Queries/posts/getPosts.query.graphql';
 import { Post } from '../../ts/types/post.types';
 
-const { data } = await useAsyncQuery<{ posts?: { data: Post[] } }>(
+const { data, error } = await useAsyncQuery<{ posts?: { data: Post[] } }>(
   GET_POST_QUERY,
 );
+
+console.log('error: ', error);
 
 const backgroundImage = ref(
   'https://static.wixstatic.com/media/9b943a_fdd9b4f4c3da4139a20e3bc9587b0b55~mv2.jpg',

@@ -1,24 +1,9 @@
+#import "../../Fragments/posts/postsDetails.fragment.graphql"
+
 query Posts($first: Int! = 10, $slug: [String] = []) {
   posts(first: $first, slug: $slug) {
     data {
-      id
-      slug
-      publish_at
-      title
-      author {
-        name
-      }
-      featured_image {
-        id
-        updated_at
-        preview_url
-        responsive_images {
-          media_library_original {
-            base64svg
-            urls
-          }
-        }
-      }
+      ...PostDetails
     }
   }
 }
