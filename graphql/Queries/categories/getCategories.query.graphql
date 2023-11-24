@@ -1,0 +1,17 @@
+query Categories {
+  categories {
+    id
+    name
+    slug
+    background {
+      preview_url
+      original_url
+      responsive_images {
+        media_library_original {
+          base64svg
+          urls
+        }
+      }
+    }
+  }
+}

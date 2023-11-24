@@ -92,7 +92,6 @@ const slides = posts.map((post, index) => ({
   buttonMessage: 'Leer más',
   url: `/post/${post.slug}`,
 }));
-console.log('slides: ', slides);
 
 // const slides = reactive([
 //   {

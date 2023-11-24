@@ -139,7 +139,4 @@ const [
 
 const post = data?.value?.post;
 const posts = otherPostsData?.value?.posts?.data;
-
-console.log('post: ', post);
-console.log('error: ', error);
 </script>
