@@ -55,4 +55,17 @@ export default defineNuxtConfig({
   },
 
   routeRules: { "/*": { cors: true } },
+  app: {
+    head: {
+      title: "Revista Phantasma | Arte y Literatura",
+      meta: [
+        {
+          content:
+            "Revista de arte y literatura, espacio creativo y crítico. Colabora con Phantasma",
+          name: "Revista Phantasma",
+        },
+      ],
+      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.png" }],
+    },
+  },
 });
