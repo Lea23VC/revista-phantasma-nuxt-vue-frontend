@@ -14,7 +14,10 @@
           <li
             v-for="(link, index) in links"
             :key="link.name"
-            :class="{ 'border-l border-gray-300': index !== 0 }"
+            :class="{
+              'border-l border-gray-300': index !== 0,
+              active: link?.href && isActiveRoute(link),
+            }"
           >
             <details v-if="link.children">
               <summary>
@@ -39,6 +42,8 @@
 import { ref } from 'vue';
 const headerRef = ref(null);
 
+const route = useRoute();
+
 import { useFixedHeader } from 'vue-use-fixed-header';
 
 const { styles } = useFixedHeader(headerRef);
@@ -47,6 +52,10 @@ const { title, links } = defineProps({
   title: String,
   links: Array,
 });
+
+const isActiveRoute = (link) => {
+  return route.path != '/' && link.href.includes(route.path);
+};
 </script>
 
 <style scoped>
@@ -54,5 +63,9 @@ header {
   position: fixed; /* or sticky */
   top: 0;
   width: 100%;
+}
+.active {
+  font-weight: 900;
+  font-size: 115% !important;
 }
 </style>
