@@ -1,7 +1,8 @@
 <template>
   <div>
-    <BannersMainBanner />
     <SliderHome />
+    <BannersMainBanner />
+
     <!-- <SectionSocialMedia /> -->
     <SectionHomeBlogEntries />
     <SectionBackground />

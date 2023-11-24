@@ -9,8 +9,8 @@
     </div>
 
     <!-- Slide Content -->
-    <div class="relative w-full h-full">
-      <div :style="slideContentStyles" :class="`absolute p-20`">
+    <div class="relative max-w-7xl m-auto h-full">
+      <div :style="slideContentStyles" :class="`absolute p-24`">
         <slot />
       </div>
     </div>

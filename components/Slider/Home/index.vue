@@ -4,7 +4,7 @@
     :modules="[SwiperAutoplay, SwiperEffectCreative, SwiperEffectFade]"
     :slides-per-view="1"
     :loop="true"
-    :effect="'creative'"
+    :effect="'fade'"
     :autoplay="{
       delay: 8000,
       disableOnInteraction: true,
@@ -26,12 +26,12 @@
         :position="slide.position"
       >
         <!-- Slide content -->
-        <h3 class="text-white font-roboto font-bold text-center text-lg py-2">
+        <h3 class="text-white font-roboto font-bold text-center text-base py-2">
           {{ slide.subtitle }}
         </h3>
         <h2
           v-html="slide.title"
-          class="text-white font-roboto font-bold text-center sm:text-7xl text-5xl py-4 sm:py-6"
+          class="text-white font-roboto font-bold text-center sm:text-6xl text-4xl py-4 sm:py-6"
         ></h2>
 
         <div class="text-center py-4 sm:py-0">
@@ -81,7 +81,7 @@ const slides = reactive([
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 800px;
+  height: 700px;
 }
 .swiper-wrapper {
   min-width: 100vh;
