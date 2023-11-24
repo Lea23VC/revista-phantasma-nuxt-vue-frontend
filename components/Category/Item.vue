@@ -12,7 +12,7 @@
         ></div>
         <div class="relative h-full w-full flex justify-center items-center">
           <div class="p-2 bg-black">
-            <h3 class="text-lg text-white">{{ item.name }}</h3>
+            <h3 class="text-lg text-center text-white">{{ item.name }}</h3>
           </div>
         </div>
       </div>

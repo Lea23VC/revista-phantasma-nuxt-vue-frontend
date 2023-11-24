@@ -1,8 +1,11 @@
 <template>
   <div class="bg-black">
-    <div class="max-w-6xl m-auto py-10 px-6 relative z-10">
+    <div class="md:max-w-6xl m-auto py-10 sm:px-6 relative z-10">
       <div class="rounded-sm p-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10" v-if="categories">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10"
+          v-if="categories"
+        >
           <CategoryItem
             v-for="(item, index) in categories"
             :key="index"

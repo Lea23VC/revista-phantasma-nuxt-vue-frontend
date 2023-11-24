@@ -27,7 +27,9 @@
       >
         <!-- Slide content -->
 
-        <h3 class="text-white font-roboto font-bold text-center text-base py-2">
+        <h3
+          class="text-white font-roboto font-bold text-center text-sm sm:text-base py-2"
+        >
           <div v-if="slide.categories" class="flex justify-center">
             <div v-for="(category, index) in slide.categories">
               <NuxtLink :to="'/phantasma/' + category.slug">{{
@@ -41,7 +43,7 @@
 
         <h2
           v-html="slide.title"
-          class="text-white max-w-2xl font-roboto font-bold text-center sm:text-5xl text-3xl pb-4 sm:pb-8"
+          class="text-white max-w-2xl font-roboto font-bold text-center sm:text-5xl text-2xl pb-4 sm:pb-8"
         ></h2>
 
         <div class="text-center py-4 sm:py-0 !z-[999] relative">

@@ -9,8 +9,8 @@
     </div>
 
     <!-- Slide Content -->
-    <div class="relative max-w-8xl m-auto h-full">
-      <div :style="slideContentStyles" :class="`absolute p-20`">
+    <div class="relative md:max-w-8xl m-auto h-full">
+      <div :style="slideContentStyles" :class="`absolute p-20 w-full sm:w-fit`">
         <slot />
       </div>
     </div>
@@ -33,25 +33,25 @@ const { name, backgroundImage, position } = defineProps({
   },
 });
 
-let slideContentStyles = {};
+let slideContentStyles = getPosition(position.valueOf()) || {};
 
-switch (position) {
-  case 'center':
-    slideContentStyles = {
-      top: '50%',
-      left: '50%',
-      transform: 'translate(-50%, -50%)',
-      textAlign: 'center',
-    };
-    break;
+function getPosition(position: string) {
+  switch (position) {
+    case 'center':
+      return {
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        textAlign: 'center',
+      };
 
-  case 'top right':
-    slideContentStyles = {
-      top: '0.5rem',
-      right: '0.5rem',
-      textAlign: 'right',
-    };
-    break;
+    case 'top right':
+      return {
+        top: '0.5rem',
+        right: '0.5rem',
+        textAlign: 'right',
+      };
+  }
 }
 </script>
 
