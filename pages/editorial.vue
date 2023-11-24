@@ -54,4 +54,14 @@ const [
     EDITORIAL_MEMBERS_QUERY,
   ), // Execute other query
 ]);
+
+useHead({
+  title: 'Editorial - Revista Phantasma',
+  meta: [
+    {
+      content:
+        'Editorial de Revista Phantasma, espacio creativo y crítico. Colabora con Phantasma',
+    },
+  ],
+});
 </script>
