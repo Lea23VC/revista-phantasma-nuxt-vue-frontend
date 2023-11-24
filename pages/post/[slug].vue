@@ -139,4 +139,30 @@ const [
 
 const post = data?.value?.post;
 const posts = otherPostsData?.value?.posts?.data;
+
+const title = post?.title + ' | Revista Phantasma';
+
+useHead({
+  title: title,
+  meta: [
+    {
+      content: post?.content_without_html,
+      name: title,
+    },
+  ],
+});
+
+useSeoMeta({
+  title: title,
+  ogTitle: title,
+  description: post?.content_without_html,
+  ogDescription: post?.content_without_html,
+  ogImage: post?.featured_image.preview_url,
+  ogUrl: 'https://revistaphantasma.com/post/' + post?.slug,
+  ogType: 'article',
+  author: post?.author?.name,
+  articlePublishedTime: post?.publish_at,
+  // @ts-ignore
+  articleAuthor: post?.author?.name,
+});
 </script>

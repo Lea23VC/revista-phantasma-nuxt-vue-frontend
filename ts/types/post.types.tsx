@@ -24,6 +24,7 @@ export type Post = {
   title: string;
   slug: string;
   content: string;
+  content_without_html: string;
   publish_at: string;
   attachments: Attachment[];
   featured_image: Media;

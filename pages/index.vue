@@ -1,6 +1,9 @@
 <template>
   <div>
-    <SliderHome v-if="postsData.posts" :posts="postsData?.posts.data" />
+    <SliderHome
+      v-if="postsData.posts"
+      :posts="postsData?.posts.data.slice(0, 4)"
+    />
 
     <SectionCategories
       v-if="categoriesData.categories"

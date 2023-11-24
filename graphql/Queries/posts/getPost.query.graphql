@@ -3,6 +3,7 @@ query Post($slug: String!) {
     id
     slug
     content
+    content_without_html
     publish_at
     title
     author {
