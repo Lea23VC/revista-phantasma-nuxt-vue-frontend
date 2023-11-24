@@ -64,6 +64,11 @@ export default defineNuxtConfig({
             "Revista de arte y literatura, espacio creativo y crítico. Colabora con Phantasma",
           name: "Revista Phantasma",
         },
+        {
+          hid: "og:image",
+          property: "og:image",
+          content: "/favicon.png",
+        },
       ],
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.png" }],
     },
