@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar bg-black">
+  <header class="navbar bg-black z-[999]" ref="headerRef" :style="styles">
     <div class="max-w-7xl m-auto">
       <div class="flex-1">
         <NuxtLink
@@ -32,12 +32,27 @@
         </ul>
       </div>
     </div>
-  </div>
+  </header>
 </template>
 
 <script setup>
+import { ref } from 'vue';
+const headerRef = ref(null);
+
+import { useFixedHeader } from 'vue-use-fixed-header';
+
+const { styles } = useFixedHeader(headerRef);
+
 const { title, links } = defineProps({
   title: String,
   links: Array,
 });
 </script>
+
+<style scoped>
+header {
+  position: fixed; /* or sticky */
+  top: 0;
+  width: 100%;
+}
+</style>

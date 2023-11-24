@@ -26,6 +26,7 @@
   "dependencies": {
     "@nuxt/image": "^1.0.0-rc.3",
     "nuxt-swiper": "^1.2.2",
-    "vue-social-sharing": "^4.0.0-alpha4"
+    "vue-social-sharing": "^4.0.0-alpha4",
+    "vue-use-fixed-header": "^2.0.0"
   }
 }

@@ -6106,6 +6106,11 @@ vue-social-sharing@^4.0.0-alpha4:
   resolved "https://registry.yarnpkg.com/vue-social-sharing/-/vue-social-sharing-4.0.0-alpha4.tgz#48d17f4ff2828c60689f2a065df86588af2bd1fb"
   integrity sha512-hMbgpZkY5aRAiznSB/sgzdMVgdSbkmIHEaELX7pUbuUd6KS1Z/GAi7a/q0Qn+GFn0+6qMMvwyp3ZOE0+WYPQ1w==
 
+vue-use-fixed-header@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/vue-use-fixed-header/-/vue-use-fixed-header-2.0.0.tgz#f663dac8d6051a773299abe60253c9dd7858cad2"
+  integrity sha512-N4vWhTZpTaY5uWXIoUAXrmMR2tBQuIPf+mT+jx/ayk2eSZNCcNy0J52uJ7Dvf8St1vSmkdYdH3K/WwuV+dTQDA==
+
 vue@^3.3.4:
   version "3.3.4"
   resolved "https://registry.npmjs.org/vue/-/vue-3.3.4.tgz"
