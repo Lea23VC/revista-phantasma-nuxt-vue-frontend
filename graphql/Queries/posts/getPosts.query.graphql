@@ -1,7 +1,12 @@
 #import "../../Fragments/posts/postsDetails.fragment.graphql"
 
-query Posts($first: Int! = 10, $slug: [String] = [], $page: Int = 1) {
-  posts(first: $first, slug: $slug, page: $page) {
+query Posts(
+  $first: Int! = 10
+  $slug: [String] = []
+  $page: Int = 1
+  $hasAuthor: QueryPostsHasAuthorWhereHasConditions = null
+) {
+  posts(first: $first, slug: $slug, page: $page, hasAuthor: $hasAuthor) {
     data {
       ...PostDetails
     }

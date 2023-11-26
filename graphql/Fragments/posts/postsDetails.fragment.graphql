@@ -5,6 +5,7 @@ fragment PostDetails on Post {
   title
   author {
     name
+    id
   }
   featured_image {
     id

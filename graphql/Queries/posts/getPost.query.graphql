@@ -8,6 +8,7 @@ query Post($slug: String!) {
     title
     author {
       name
+      id
     }
     featured_image {
       id

@@ -18,6 +18,7 @@
                   v-if="post"
                   :authorName="post?.author?.name"
                   :date="post?.publish_at"
+                  :id="post?.author?.id"
                 />
 
                 <div class="pt-10 pb-10">
@@ -116,7 +117,6 @@ import GET_POST_QUERY from '../../graphql/Queries/posts/getPost.query.graphql';
 import GET_POSTS_QUERY from '../../graphql/Queries/posts/getPosts.query.graphql';
 import { getFileExtension } from '@/utils/transformation/getFileExtention';
 import { Post } from '../../ts/types/post.types';
-import { transformDate } from '../../utils/transformation/transformDate';
 // @ts-ignore
 const route = useRoute();
 
