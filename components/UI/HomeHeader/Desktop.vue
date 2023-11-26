@@ -138,6 +138,14 @@ const { title, links } = defineProps({
 const isActiveRoute = (link) => {
   return route.path != '/' && link.href.includes(route.path);
 };
+
+watch(
+  () => route.path,
+  () => {
+    searchButtonPressed.value = false;
+    searchValue.value = '';
+  },
+);
 </script>
 
 <style scoped>
