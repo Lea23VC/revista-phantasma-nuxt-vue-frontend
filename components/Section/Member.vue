@@ -9,7 +9,7 @@
       <!-- If member.author exists, wrap the name in a NuxtLink -->
       <NuxtLink
         class="font-avenir font-bold text-2xl text-white"
-        :to="`/autor/${member.author.id}`"
+        :to="`/phantasma/autor/${member.author.id}`"
       >
         <div class="tooltip tooltip-bottom" data-tip="Ver entradas">
           {{ member.name }}
