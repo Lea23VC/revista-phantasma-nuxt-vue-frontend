@@ -1,7 +1,7 @@
 <template>
   <BlogPageTemplate
     :query-title="query ? 'Busqueda: ' + query : ''"
-    :variables="variables"
+    :variables="query ? variables : {}"
   ></BlogPageTemplate>
 </template>
 
