@@ -16,8 +16,8 @@
       v-if="postsData.posts"
       :posts="postsData?.posts.data"
     />
-    <SectionBackground />
-    <SliderQuotes />
+    <!-- <SectionBackground />
+    <SliderQuotes /> -->
   </div>
 </template>
 

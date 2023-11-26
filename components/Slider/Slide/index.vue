@@ -1,5 +1,5 @@
 <template>
-  <div :id="name" class="relative w-full h-full">
+  <div :id="name" class="relative w-full h-full cursor-grab">
     <!-- Background Image -->
     <div class="absolute h-full w-full">
       <NuxtImg :src="backgroundImage" class="object-cover h-full w-full" />
