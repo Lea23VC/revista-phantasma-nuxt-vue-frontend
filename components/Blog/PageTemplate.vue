@@ -9,16 +9,31 @@
     <div class="max-w-5xl px-6 m-auto pb-20">
       <div v-if="queryTitle" class="pt-10">
         <h2 class="md:text-4xl text-xl text-white font-avenir font-bold pb-4">
-          {{ queryTitle }}: {{ queryLabel }}
+          {{ queryTitle }} {{ queryLabel }}
         </h2>
       </div>
 
-      <BlogGrid :posts="posts" :height="'250px'" />
-      <div class="flex justify-center">
+      <div v-if="loading">
+        <div class="grid-cols-3 grid gap-10">
+          <div v-for="(_, index) in [0, 1, 2, 3, 4, 6]" :key="index">
+            <USkeleton class="h-[250px] w-full" />
+          </div>
+        </div>
+      </div>
+
+      <BlogGrid v-if="!loading" :posts="data.posts?.data" :height="'250px'" />
+
+      <div v-if="!loading && data.posts?.data?.length == 0">
+        No hay resultados
+      </div>
+      <div
+        class="flex justify-center"
+        v-if="data.posts && data.posts.paginatorInfo"
+      >
         <UPagination
-          v-if="pagination"
-          :total="pagination?.total"
-          :model-value="pagination?.currentPage"
+          v-if="data.posts.paginatorInfo"
+          :total="data.posts.paginatorInfo?.total"
+          :model-value="data.posts.paginatorInfo?.currentPage"
           size="lg"
           :activeButton="{ color: 'black' }"
         />
@@ -28,14 +43,19 @@
 </template>
 
 <script setup lang="ts">
-const { title, variables, isAuthor } = defineProps({
+import { watch, computed, ref } from 'vue';
+import { PostPaginator, Post } from '@/ts/types/post.types';
+import GET_POSTS_QUERY from '@/graphql/Queries/posts/getPosts.query.graphql';
+import { PaginatorInfo } from '~/ts/types/pagination.types';
+
+const { title, variables, isAuthor, queryTitle } = defineProps({
   title: {
     type: String,
     default: 'BLOG',
   },
   variables: {
     type: Object,
-    default: {},
+    default: () => ({}),
   },
   isAuthor: {
     type: Boolean,
@@ -46,24 +66,27 @@ const { title, variables, isAuthor } = defineProps({
   },
 });
 
-import { PostPaginator } from '@/ts/types/post.types';
-import GET_POSTS_QUERY from '@/graphql/Queries/posts/getPosts.query.graphql';
+// Function to fetch posts
+const { data, error, pending: loading, refresh } = await useAsyncQuery<{
+  posts?: PostPaginator;
+}>(GET_POSTS_QUERY, variables);
 
-const { data, error } = await useAsyncQuery<{ posts?: PostPaginator }>(
-  GET_POSTS_QUERY,
+// Initial fetch
+
+// Watch for changes in variables
+watch(
   variables,
+  async () => {
+    refresh();
+  },
+  { deep: true },
 );
 
-const posts = data?.value.posts?.data;
-const pagination = data.value.posts?.paginatorInfo;
-
-const bannerTitle = computed(() => {
-  return 'BLOG';
-});
+const bannerTitle = computed(() => 'BLOG');
 
 const queryLabel = computed(() => {
-  if (isAuthor && posts?.length && posts.length > 0) {
-    return posts[0]?.author?.name;
+  if (isAuthor && data.value.posts && data.value.posts.data.length > 0) {
+    return data.value.posts.data[0]?.author?.name;
   }
 });
 

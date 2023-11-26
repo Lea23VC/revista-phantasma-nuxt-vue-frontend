@@ -5,8 +5,15 @@ query Posts(
   $slug: [String] = []
   $page: Int = 1
   $hasAuthor: QueryPostsHasAuthorWhereHasConditions = null
+  $where: QueryPostsWhereWhereConditions = null
 ) {
-  posts(first: $first, slug: $slug, page: $page, hasAuthor: $hasAuthor) {
+  posts(
+    first: $first
+    slug: $slug
+    page: $page
+    hasAuthor: $hasAuthor
+    where: $where
+  ) {
     data {
       ...PostDetails
     }

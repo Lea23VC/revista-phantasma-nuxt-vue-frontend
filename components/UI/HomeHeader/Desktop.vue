@@ -3,22 +3,52 @@
     <div class="max-w-7xl m-auto flex-col">
       <div class="p-0 w-full">
         <transition name="fade">
-          <div class="flex justify-end px-4 gap-2" v-if="isTopOfPage()">
-            <NuxtLink
-              to="https://www.facebook.com/revistaphantasma"
-              target="_blank"
-            >
-              <SVGIconFB
-                class="h-[15px] text-gray-200 hover:text-white transition-colors duration-300"
-              ></SVGIconFB>
-            </NuxtLink>
-            <NuxtLink
-              to="https://www.instagram.com/revista.phantasma/"
-              target="_blank"
-              ><SVGIconIG
-                class="h-[15px] text-gray-200 hover:text-white transition-colors duration-300"
-              ></SVGIconIG
-            ></NuxtLink>
+          <div
+            class="flex justify-end items-center px-4 gap-2 max-h-[28px]"
+            v-if="isTopOfPage()"
+          >
+            <transition name="fade">
+              <div class="flex gap-2" v-if="!searchButtonPressed">
+                <NuxtLink
+                  to="https://www.facebook.com/revistaphantasma"
+                  target="_blank"
+                >
+                  <SVGIconFB
+                    class="h-[15px] text-gray-200 hover:text-white transition-colors duration-300"
+                  ></SVGIconFB>
+                </NuxtLink>
+                <NuxtLink
+                  to="https://www.instagram.com/revista.phantasma/"
+                  target="_blank"
+                  ><SVGIconIG
+                    class="h-[15px] text-gray-200 hover:text-white transition-colors duration-300"
+                  ></SVGIconIG
+                ></NuxtLink>
+              </div>
+              <div v-else>
+                <UInput
+                  icon="i-heroicons-magnifying-glass-20-solid"
+                  size="sm"
+                  color="white"
+                  :trailing="false"
+                  v-model="searchValue"
+                  @keyup.enter="searchOrHide()"
+                  placeholder="Buscar..."
+                  input-class="!bg-black !focus:border-white !focus:ring-white !dark:focus:ring-white !dark:focus:border-white"
+                />
+              </div>
+            </transition>
+
+            <div class="flex items-center">
+              <UButton
+                icon="i-heroicons-magnifying-glass"
+                size="xs"
+                :color="searchButtonPressed ? 'black' : 'white'"
+                square
+                variant="solid"
+                @click="searchOrHide()"
+              />
+            </div>
           </div>
         </transition>
       </div>
@@ -61,9 +91,22 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
-
 const scrollY = ref(0);
+
+const searchButtonPressed = ref(false);
+
+const searchValue = ref('');
+
+function searchOrHide() {
+  if (searchValue.value != '') {
+    navigateTo({
+      path: '/phantasma/blog',
+      query: { q: searchValue.value },
+    });
+  } else {
+    searchButtonPressed.value = !searchButtonPressed.value;
+  }
+}
 
 const handleScroll = () => {
   scrollY.value = window.scrollY;
