@@ -26,16 +26,10 @@
                 ></NuxtLink>
               </div>
               <div v-else>
-                <UInput
-                  icon="i-heroicons-magnifying-glass-20-solid"
-                  size="sm"
-                  color="white"
-                  :trailing="false"
+                <FormsSearchInput
                   v-model="searchValue"
-                  @keyup.enter="searchOrHide()"
-                  placeholder="Buscar..."
-                  input-class="!bg-black !focus:border-white !focus:ring-white !dark:focus:ring-white !dark:focus:border-white"
-                />
+                  @searchOrHide="searchOrHide"
+                ></FormsSearchInput>
               </div>
             </transition>
 
