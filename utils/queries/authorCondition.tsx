@@ -3,6 +3,11 @@ export default function getWhereHasCondition(
   column = "NAME",
   operator = "LIKE",
 ) {
-  const condition = { column: column, operator: operator, value: `%${value}%` };
+  let columnValue = value;
+  if (operator === "LIKE") {
+    columnValue = `%${value}%`;
+  }
+
+  const condition = { value: columnValue, column: column, operator: operator };
   return condition;
 }

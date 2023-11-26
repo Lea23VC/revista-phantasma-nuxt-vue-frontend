@@ -2,7 +2,7 @@
   <div
     class="flex flex-col sm:flex-row items-start sm:items-center font-avenir text-gray-500"
   >
-    <NuxtLink :to="'/author/' + id">
+    <NuxtLink :to="'/phantasma/autor/' + id">
       <p>{{ authorName }}</p></NuxtLink
     >
     <i class="mx-2 text-gray-400 hidden sm:block"

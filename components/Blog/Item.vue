@@ -51,5 +51,8 @@ const { item, height } = defineProps({
   @media screen and (min-width: 768px) {
     height: v-bind(height);
   }
+  @media screen and (max-width: 768px) {
+    height: 350px;
+  }
 }
 </style>
