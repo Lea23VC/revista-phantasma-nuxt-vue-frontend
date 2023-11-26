@@ -14,11 +14,7 @@
       </div>
 
       <div v-if="loading">
-        <div class="grid-cols-3 grid gap-10">
-          <div v-for="(_, index) in [0, 1, 2, 3, 4, 6]" :key="index">
-            <USkeleton class="h-[250px] w-full" />
-          </div>
-        </div>
+        <FeedbackSkeletonGrid :gridCols="9" />
       </div>
 
       <BlogGrid v-if="!loading" :posts="data.posts?.data" :height="'250px'" />
@@ -69,6 +65,14 @@ if (isAuthor && data.value.posts && data.value.posts.data.length > 0) {
   useHead({
     title: data.value.posts.data[0]?.author?.name + ' | Revista Phantasma',
   });
+
+  useSeoMeta({
+    title: data.value.posts.data[0]?.author?.name + ' | Revista Phantasma',
+    ogTitle: data.value.posts.data[0]?.author?.name + ' | Revista Phantasma',
+    description: 'Entradas de ' + data.value.posts.data[0]?.author?.name,
+    ogDescription: 'Entradas de ' + data.value.posts.data[0]?.author?.name,
+    author: data.value.posts.data[0]?.author?.name,
+  });
 }
 
 // Watch for changes in variables
@@ -76,7 +80,6 @@ watch(
   variables,
   async () => {
     refresh();
-    console.log('Changed 2: ', variables);
   },
   { deep: true },
 );
