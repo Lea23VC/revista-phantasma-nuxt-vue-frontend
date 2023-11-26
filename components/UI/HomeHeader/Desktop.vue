@@ -5,7 +5,7 @@
         <transition name="fade">
           <div class="flex justify-end px-4 gap-2" v-if="isTopOfPage()">
             <NuxtLink
-              to="https://www.instagram.com/revista.phantasma/"
+              to="https://www.facebook.com/revistaphantasma"
               target="_blank"
             >
               <SVGIconFB
@@ -13,7 +13,7 @@
               ></SVGIconFB>
             </NuxtLink>
             <NuxtLink
-              to="https://www.facebook.com/revistaphantasma"
+              to="https://www.instagram.com/revista.phantasma/"
               target="_blank"
               ><SVGIconIG
                 class="h-[15px] text-gray-200 hover:text-white transition-colors duration-300"

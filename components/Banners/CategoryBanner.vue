@@ -17,7 +17,7 @@
     </div>
 
     <div
-      class="relative sm:hidden font-lulo-clean-one text-4xl sm:text-2xl md:text-4xl lg:text-5xl gap-4 flex flex-col"
+      class="relative sm:hidden text-center font-lulo-clean-one text-2xl sm:text-lg md:text-2xl lg:text-3xl gap-4 flex flex-col"
     >
       <h2 class="text-white">{{ name }}</h2>
     </div>
