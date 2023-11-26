@@ -23,7 +23,9 @@
         </div>
       </div>
 
-      <BlogGrid :posts="category?.posts" />
+      <div class="py-20">
+        <BlogGrid :posts="category?.posts" />
+      </div>
     </div>
   </div>
 </template>

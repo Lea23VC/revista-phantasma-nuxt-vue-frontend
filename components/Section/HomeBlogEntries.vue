@@ -14,11 +14,13 @@
         </div>
 
         <div class="text-center pt-16">
-          <button
-            class="btn btn-outline font-roboto font-thin border-white text-white"
+          <NuxtLink to="/phantasma/blog">
+            <button
+              class="btn btn-outline font-roboto font-thin border-white text-white"
+            >
+              Ver más
+            </button></NuxtLink
           >
-            Ver más
-          </button>
         </div>
       </div>
     </div>

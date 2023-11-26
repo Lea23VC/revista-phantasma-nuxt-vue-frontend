@@ -1,9 +1,19 @@
 #import "../../Fragments/posts/postsDetails.fragment.graphql"
 
-query Posts($first: Int! = 10, $slug: [String] = []) {
-  posts(first: $first, slug: $slug) {
+query Posts($first: Int! = 10, $slug: [String] = [], $page: Int = 1) {
+  posts(first: $first, slug: $slug, page: $page) {
     data {
       ...PostDetails
+    }
+    paginatorInfo {
+      count
+      currentPage
+      firstItem
+      hasMorePages
+      lastItem
+      lastPage
+      perPage
+      total
     }
   }
 }

@@ -14,10 +14,12 @@
     </div>
 
     <div
-      class="relative font-lulo-clean-one text-xl sm:text-2xl md:text-4xl lg:text-5xl gap-4 flex flex-col"
+      class="relative font-lulo-clean-one text-xl sm:text-2xl md:text-4xl lg:text-5xl"
     >
-      <h2 class="text-black">PHANTASMA</h2>
-      <h2 class="text-white">PHANTASMA</h2>
+      <div class="gap-4 flex flex-col">
+        <h2 class="text-black text-center">{{ title ?? 'PHANTASMA' }}</h2>
+        <h2 class="text-white text-center">{{ title ?? 'PHANTASMA' }}</h2>
+      </div>
     </div>
 
     <!-- Slide Content -->
@@ -31,6 +33,9 @@ const { backgroundImage, blur } = defineProps({
     required: true,
   },
   blur: {
+    type: String,
+  },
+  title: {
     type: String,
   },
 });

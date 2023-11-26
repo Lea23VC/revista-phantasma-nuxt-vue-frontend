@@ -20,6 +20,7 @@ export default defineNuxtConfig({
     "@nuxtjs/apollo",
     "@nuxt/image",
     "nuxt-swiper",
+    "@nuxt/ui",
   ],
   googleFonts: {
     download: true,
