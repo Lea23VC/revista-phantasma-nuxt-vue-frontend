@@ -21,7 +21,11 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "nuxt-swiper",
     "@nuxt/ui",
+    "nuxt-gtag",
   ],
+  gtag: {
+    id: process.env.GTAG_ID as string,
+  },
   googleFonts: {
     download: true,
     families: {
