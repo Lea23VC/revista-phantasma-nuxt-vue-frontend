@@ -1,7 +1,7 @@
 <template>
   <BlogPageTemplate
     :query-title="query ? 'Busqueda: ' + query : ''"
-    :variables="query ? variables : {}"
+    :variables="variables"
   ></BlogPageTemplate>
 </template>
 
@@ -12,15 +12,31 @@ const route = useRoute();
 
 const query = ref(route.query.q as string);
 
-const variables = reactive({
-  where: getPostsWhereSearchConditions(query.value),
-});
+const variables = reactive(
+  query.value
+    ? {
+        where: getPostsWhereSearchConditions(query.value),
+      }
+    : {},
+);
+
+// Function to update the page title
+const updateTitle = (searchQuery: string) => {
+  useHead({
+    title: searchQuery
+      ? `Busqueda: ${searchQuery} | Revista Phantasma`
+      : 'Blog | Revista Phantasma',
+  });
+};
+
+updateTitle(query.value);
 
 watch(
   () => route.query.q,
   (value) => {
     variables.where = getPostsWhereSearchConditions(value as string);
     query.value = value as string;
+    updateTitle(query.value);
   },
 );
 </script>

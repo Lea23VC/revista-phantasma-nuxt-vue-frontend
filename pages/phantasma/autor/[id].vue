@@ -1,7 +1,7 @@
 <template>
   <BlogPageTemplate
     :variables="variables"
-    :query-title="'Autor'"
+    :query-title="'Autor:'"
     :is-author="true"
   ></BlogPageTemplate>
 </template>

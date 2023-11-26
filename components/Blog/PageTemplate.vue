@@ -43,19 +43,13 @@
 </template>
 
 <script setup lang="ts">
-import { watch, computed, ref } from 'vue';
-import { PostPaginator, Post } from '@/ts/types/post.types';
+import { PostPaginator } from '@/ts/types/post.types';
 import GET_POSTS_QUERY from '@/graphql/Queries/posts/getPosts.query.graphql';
-import { PaginatorInfo } from '~/ts/types/pagination.types';
 
-const { title, variables, isAuthor, queryTitle } = defineProps({
-  title: {
-    type: String,
-    default: 'BLOG',
-  },
+const { variables, isAuthor, queryTitle } = defineProps({
   variables: {
     type: Object,
-    default: () => ({}),
+    required: true,
   },
   isAuthor: {
     type: Boolean,
@@ -71,13 +65,18 @@ const { data, error, pending: loading, refresh } = await useAsyncQuery<{
   posts?: PostPaginator;
 }>(GET_POSTS_QUERY, variables);
 
-// Initial fetch
+if (isAuthor && data.value.posts && data.value.posts.data.length > 0) {
+  useHead({
+    title: data.value.posts.data[0]?.author?.name + ' | Revista Phantasma',
+  });
+}
 
 // Watch for changes in variables
 watch(
   variables,
   async () => {
     refresh();
+    console.log('Changed 2: ', variables);
   },
   { deep: true },
 );
