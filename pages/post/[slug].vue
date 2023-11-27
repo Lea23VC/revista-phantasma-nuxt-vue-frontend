@@ -154,8 +154,9 @@ useHead({
       name: 'description',
     },
     {
+      hid: 'og:image',
+      property: 'og:image',
       content: post?.featured_image.preview_url,
-      name: 'og:image',
     },
     {
       content: 'https://phantasma.cl/post/' + post?.slug,
@@ -186,7 +187,7 @@ useSeoMeta({
   description: post?.content_without_html,
   ogDescription: post?.content_without_html,
   ogImage: post?.featured_image.preview_url,
-  ogUrl: 'https://revistaphantasma.com/post/' + post?.slug,
+  ogUrl: 'https://phantasma.cl/post/' + post?.slug,
   ogType: 'article',
   author: post?.author?.name,
   articlePublishedTime: post?.publish_at,
