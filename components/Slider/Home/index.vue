@@ -25,6 +25,7 @@
           :name="slide.name"
           :backgroundImage="slide.backgroundImage"
           :position="slide.position"
+          :blur="slide.blur"
         >
           <!-- Slide content -->
 
@@ -95,6 +96,7 @@ const slides = posts.map((post, index) => ({
   title: post.title,
   buttonMessage: 'Leer más',
   url: `/post/${post.slug}`,
+  blur: post.featured_image.responsive_images.media_library_original?.base64svg,
 }));
 
 // const slides = reactive([

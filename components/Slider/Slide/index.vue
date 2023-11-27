@@ -2,7 +2,13 @@
   <div :id="name" class="relative w-full h-full cursor-grab">
     <!-- Background Image -->
     <div class="absolute h-full w-full">
-      <NuxtImg :src="backgroundImage" class="object-cover h-full w-full" />
+      <NuxtImg
+        :src="backgroundImage"
+        class="object-cover h-full w-full"
+        sizes="(max-width: 600px) 100vw, (max-width: 1024px) 100vw, 100vw"
+        loading="lazy"
+        :placeholder="blur"
+      />
       <div
         class="absolute top-0 left-0 w-full h-full bg-black opacity-50"
       ></div>
@@ -26,6 +32,9 @@ const { name, backgroundImage, position } = defineProps({
   backgroundImage: {
     type: String,
     required: true,
+  },
+  blur: {
+    type: String,
   },
   position: {
     type: String,
