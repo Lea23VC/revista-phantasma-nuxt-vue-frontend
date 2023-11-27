@@ -45,6 +45,27 @@ const { data, error } = await useAsyncQuery<{ category?: Category }>(
   variables,
 );
 const category = data?.value.category;
+
+useHead({
+  title: category?.name,
+  meta: [
+    {
+      hid: 'description',
+      name: 'description',
+      content: 'Entradas de la categoría ' + category?.name,
+    },
+
+    {
+      content: 'Entradas de la categoría ' + category?.name,
+      name: category?.name + ' | Revista Phantasma',
+    },
+    {
+      hid: 'og:image',
+      property: 'og:image',
+      content: category?.background.preview_url,
+    },
+  ],
+});
 </script>
 <style scoped>
 .bg-brown-transparent {
