@@ -149,6 +149,34 @@ useHead({
       content: post?.content_without_html,
       name: title,
     },
+    {
+      content: post?.content_without_html,
+      name: 'description',
+    },
+    {
+      content: post?.featured_image.preview_url,
+      name: 'og:image',
+    },
+    {
+      content: 'https://phantasma.cl/post/' + post?.slug,
+      name: 'og:url',
+    },
+    {
+      content: 'article',
+      name: 'og:type',
+    },
+    {
+      content: post?.author?.name,
+      name: 'author',
+    },
+    {
+      content: post?.publish_at,
+      name: 'article:published_time',
+    },
+    {
+      content: post?.author?.name,
+      name: 'article:author',
+    },
   ],
 });
 
