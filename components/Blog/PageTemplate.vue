@@ -29,7 +29,7 @@
         <UPagination
           v-if="data.posts.paginatorInfo"
           :total="data.posts.paginatorInfo?.total"
-          :model-value="data.posts.paginatorInfo?.currentPage"
+          v-model="page"
           size="lg"
           :activeButton="{ color: 'black' }"
         />
@@ -74,6 +74,18 @@ if (isAuthor && data.value.posts && data.value.posts.data.length > 0) {
     author: data.value.posts.data[0]?.author?.name,
   });
 }
+
+const page = ref(data.value.posts?.paginatorInfo?.currentPage || 1);
+const route = useRoute();
+const router = useRouter();
+
+watch(page, (newPage) => {
+  // Construct the new URL with the page number
+  const newPath = `/phantasma/blog/${newPage}`;
+
+  // Push the new route
+  navigateTo(newPath);
+});
 
 // Watch for changes in variables
 watch(
