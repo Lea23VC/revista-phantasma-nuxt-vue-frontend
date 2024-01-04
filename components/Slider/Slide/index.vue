@@ -5,7 +5,7 @@
       <NuxtImg
         :src="backgroundImage"
         class="object-cover h-full w-full"
-        sizes="(max-width: 900px) 100vw, (max-width: 1024px) 100vw, 100vw"
+        sizes="100vw sm:50vw md:400px lg:1200 xl:1600 2xl:1980"
         loading="lazy"
         :placeholder="blur"
       />
