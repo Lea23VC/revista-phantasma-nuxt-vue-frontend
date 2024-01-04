@@ -1,0 +1,16 @@
+query Navigation {
+  navigation {
+    label
+    type
+    data {
+      slug
+    }
+    children {
+      label
+      type
+      data {
+        slug
+      }
+    }
+  }
+}

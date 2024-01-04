@@ -1,6 +1,6 @@
 <template>
   <header class="navbar bg-black z-[999]" ref="headerRef" :style="styles">
-    <div class="max-w-7xl m-auto flex-col">
+    <div class="max-w-6xl m-auto flex-col w-full">
       <div class="p-0 w-full">
         <transition name="fade">
           <div
@@ -46,7 +46,7 @@
           </div>
         </transition>
       </div>
-      <div class="flex">
+      <div class="flex w-full">
         <NuxtLink
           to="/"
           class="btn btn-ghost normal-case text-xl font-libre-baskerville text-white"
@@ -54,28 +54,30 @@
           {{ title }}
         </NuxtLink>
 
-        <div class="flex-none z-10 text-white">
+        <div class="flex z-10 text-white w-full justify-end">
           <ul class="menu menu-horizontal font-libre-baskerville">
             <li
-              v-for="(link, index) in links"
-              :key="link.name"
+              v-for="(link, index) in navigation"
+              :key="link.label"
               :class="{
                 'border-l border-gray-300': index !== 0,
-                active: link?.href && isActiveRoute(link),
+                active: link?.data.slug && isActiveRoute(link),
               }"
             >
               <details v-if="link.children">
                 <summary>
-                  {{ link.name }}
+                  {{ link.label }}
                 </summary>
                 <ul class="p-2 bg-black text-white font-libre-baskerville">
-                  <li v-for="child in link.children" :key="child.name">
-                    <NuxtLink :to="child.href">{{ child.name }} </NuxtLink>
+                  <li v-for="child in link.children" :key="child.label">
+                    <NuxtLink :to="child.data.slug"
+                      >{{ child.label }}
+                    </NuxtLink>
                   </li>
                 </ul>
               </details>
 
-              <NuxtLink :to="link.href" v-else>{{ link.name }}</NuxtLink>
+              <NuxtLink :to="link.data.slug" v-else>{{ link.label }}</NuxtLink>
             </li>
           </ul>
         </div>
@@ -84,7 +86,9 @@
   </header>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import { Navigation } from '~/ts/types/navigation.types';
+
 const scrollY = ref(0);
 
 const searchButtonPressed = ref(false);
@@ -124,13 +128,16 @@ import { useFixedHeader } from 'vue-use-fixed-header';
 
 const { styles } = useFixedHeader(headerRef);
 
-const { title, links } = defineProps({
+const { title, navigation } = defineProps({
   title: String,
-  links: Array,
+  navigation: {
+    type: Object as PropType<Navigation[]>,
+    required: false,
+  },
 });
 
-const isActiveRoute = (link) => {
-  return route.path != '/' && link.href.includes(route.path);
+const isActiveRoute = (link: Navigation) => {
+  return route.path != '/' && link.data.slug.includes(route.path);
 };
 
 watch(
