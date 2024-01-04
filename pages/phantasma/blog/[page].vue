@@ -17,11 +17,13 @@ const variables = reactive(
   query.value
     ? {
         where: getPostsWhereSearchConditions(query.value),
+        page: page ? parseInt(page) : 1,
       }
     : {
         page: page ? parseInt(page) : 1,
       },
 );
+console.log('variables', variables);
 
 // Function to update the page title
 const updateTitle = (searchQuery: string) => {

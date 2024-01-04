@@ -80,11 +80,17 @@ const route = useRoute();
 const router = useRouter();
 
 watch(page, (newPage) => {
-  // Construct the new URL with the page number
-  const newPath = `/phantasma/blog/${newPage}`;
+  // Base path for the blog
+  const basePath = '/phantasma/blog';
 
-  // Push the new route
-  navigateTo(newPath);
+  // Get the current query parameters
+  const currentQuery = route.query;
+
+  // Build the new path with the updated page number
+  const newPath = `${basePath}/${newPage}`;
+
+  // Use the router to navigate to the new path with the existing query parameters
+  navigateTo({ path: newPath, query: currentQuery });
 });
 
 // Watch for changes in variables
