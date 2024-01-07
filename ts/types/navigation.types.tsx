@@ -6,5 +6,5 @@ export type Navigation = {
 };
 
 export type NavigationData = {
-  slug: string;
+  url: string;
 };

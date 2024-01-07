@@ -61,7 +61,7 @@
               :key="link.label"
               :class="{
                 'border-l border-gray-300': index !== 0,
-                active: link?.data.slug && isActiveRoute(link),
+                active: link?.data.url && isActiveRoute(link),
               }"
             >
               <div
@@ -71,8 +71,8 @@
                 <NuxtLink
                   tabindex="0"
                   role="button"
-                  :to="link.data.slug"
-                  v-if="link.data.slug"
+                  :to="link.data.url"
+                  v-if="link.data.url"
                 >
                   {{ link.label }}
                 </NuxtLink>
@@ -82,14 +82,12 @@
                   class="p-2 rounded bg-black m-0 text-white font-libre-baskerville dropdown-content z-[1] menu w-52"
                 >
                   <li v-for="child in link.children" :key="child.label">
-                    <NuxtLink :to="child.data.slug"
-                      >{{ child.label }}
-                    </NuxtLink>
+                    <NuxtLink :to="child.data.url">{{ child.label }} </NuxtLink>
                   </li>
                 </ul>
               </div>
 
-              <NuxtLink :to="link.data.slug" v-else>{{ link.label }}</NuxtLink>
+              <NuxtLink :to="link.data.url" v-else>{{ link.label }}</NuxtLink>
             </li>
           </ul>
         </div>
@@ -153,7 +151,7 @@ const { title, navigation } = defineProps({
 });
 
 const isActiveRoute = (link: Navigation) => {
-  return route.path != '/' && link.data.slug.includes(route.path);
+  return route.path != '/' && link.data.url.includes(route.path);
 };
 
 watch(

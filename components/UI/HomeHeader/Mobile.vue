@@ -10,12 +10,12 @@
           class="menu menu-sm dropdown-content mt-3 z-[99] p-2 shadow bg-black rounded-box w-60 font-libre-baskerville"
         >
           <li v-for="(link, index) in navigation" :key="index">
-            <NuxtLink :to="link.data.slug" class="py-2">
+            <NuxtLink :to="link.data.url" class="py-2">
               {{ link.label }}
             </NuxtLink>
             <ul class="p-2 bg-black" v-if="link.children">
               <li v-for="child in link.children" :key="child.label">
-                <NuxtLink :to="child.data.slug" class="py-2"
+                <NuxtLink :to="child.data.url" class="py-2"
                   >{{ child.label }}
                 </NuxtLink>
               </li>

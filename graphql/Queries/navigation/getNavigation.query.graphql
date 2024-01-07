@@ -3,13 +3,13 @@ query Navigation {
     label
     type
     data {
-      slug
+      url
     }
     children {
       label
       type
       data {
-        slug
+        url
       }
     }
   }
