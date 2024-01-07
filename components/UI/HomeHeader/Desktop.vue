@@ -46,7 +46,7 @@
           </div>
         </transition>
       </div>
-      <div class="flex w-full">
+      <div class="flex w-full" v-if="!pending">
         <NuxtLink
           to="/"
           class="btn btn-ghost normal-case text-xl font-libre-baskerville text-white"
@@ -64,18 +64,30 @@
                 active: link?.data.slug && isActiveRoute(link),
               }"
             >
-              <details v-if="link.children">
-                <summary>
+              <div
+                class="dropdown dropdown-hover dropdown-bottom"
+                v-if="link.children"
+              >
+                <NuxtLink
+                  tabindex="0"
+                  role="button"
+                  :to="link.data.slug"
+                  v-if="link.data.slug"
+                >
                   {{ link.label }}
-                </summary>
-                <ul class="p-2 bg-black text-white font-libre-baskerville">
+                </NuxtLink>
+
+                <ul
+                  tabindex="0"
+                  class="p-2 rounded bg-black m-0 text-white font-libre-baskerville dropdown-content z-[1] menu w-52"
+                >
                   <li v-for="child in link.children" :key="child.label">
                     <NuxtLink :to="child.data.slug"
                       >{{ child.label }}
                     </NuxtLink>
                   </li>
                 </ul>
-              </details>
+              </div>
 
               <NuxtLink :to="link.data.slug" v-else>{{ link.label }}</NuxtLink>
             </li>
@@ -131,7 +143,11 @@ const { styles } = useFixedHeader(headerRef);
 const { title, navigation } = defineProps({
   title: String,
   navigation: {
-    type: Object as PropType<Navigation[]>,
+    type: (Object as PropType<Navigation[]>) || undefined,
+    required: false,
+  },
+  pending: {
+    type: Boolean,
     required: false,
   },
 });

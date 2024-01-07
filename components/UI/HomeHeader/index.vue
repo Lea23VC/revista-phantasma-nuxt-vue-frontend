@@ -3,9 +3,16 @@
     class="hidden lg:flex"
     :title="title"
     :navigation="data?.navigation"
+    :pending="pending"
   />
 
-  <UIHomeHeaderMobile class="flex lg:hidden" :title="title" :links="links" />
+  <UIHomeHeaderMobile
+    class="flex lg:hidden"
+    :title="title"
+    :links="links"
+    :navigation="data?.navigation"
+    :pending="pending"
+  />
 </template>
 
 <script setup lang="ts">
@@ -13,10 +20,8 @@ import GET_NAVIGATION_QUERY from '@/graphql/Queries/navigation/getNavigation.que
 import { Navigation } from '~/ts/types/navigation.types';
 
 const { data, pending } = useAsyncQuery<{
-  navigation?: { data: Navigation[] };
+  navigation?: Navigation[];
 }>(GET_NAVIGATION_QUERY);
-
-console.log('Pending: ', pending);
 
 const title = ref('Revista Phantasma');
 const links = reactive([

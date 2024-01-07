@@ -9,14 +9,14 @@
           tabindex="0"
           class="menu menu-sm dropdown-content mt-3 z-[99] p-2 shadow bg-black rounded-box w-60 font-libre-baskerville"
         >
-          <li v-for="(link, index) in links" :key="index">
-            <NuxtLink :to="link.href" class="py-2">
-              {{ link.name }}
+          <li v-for="(link, index) in navigation" :key="index">
+            <NuxtLink :to="link.data.slug" class="py-2">
+              {{ link.label }}
             </NuxtLink>
             <ul class="p-2 bg-black" v-if="link.children">
-              <li v-for="child in link.children" :key="child.name">
-                <NuxtLink :to="child.href" class="py-2"
-                  >{{ child.name }}
+              <li v-for="child in link.children" :key="child.label">
+                <NuxtLink :to="child.data.slug" class="py-2"
+                  >{{ child.label }}
                 </NuxtLink>
               </li>
             </ul>
@@ -49,13 +49,19 @@
   </div>
 </template>
 
-<script setup>
-const { title, links } = defineProps({
+<script setup lang="ts">
+import { Navigation } from '~/ts/types/navigation.types';
+
+const { title, navigation } = defineProps({
   title: String,
-  links: Array,
+  navigation: {
+    type: (Object as PropType<Navigation[]>) || undefined,
+    required: false,
+  },
 });
 
 function removeFocusFromDropdown() {
+  // @ts-ignore
   document.activeElement.blur();
 }
 
