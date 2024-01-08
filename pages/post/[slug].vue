@@ -12,7 +12,7 @@
       <div class="max-w-[980px] m-auto">
         <div class="bg-white p-4 px-6">
           <article class="border border-phantasma-gray">
-            <div class="p-4 lg:p-16">
+            <div class="p-4 pt-8 lg:p-16">
               <div>
                 <PostAuthorData
                   v-if="post"
@@ -22,7 +22,9 @@
                 />
 
                 <div class="pt-10 pb-10">
-                  <h1 class="text-black font-avenir lg:text-4xl font-bold">
+                  <h1
+                    class="text-black font-avenir text-xl lg:text-4xl font-bold"
+                  >
                     {{ post?.title }}
                   </h1>
                 </div>
@@ -31,20 +33,24 @@
                   v-for="(attachment, index) in post?.attachments"
                   class="pb-8"
                 >
-                  <div class="pb-8" v-html="attachment.description"></div>
+                  <div
+                    class="pb-8"
+                    v-if="attachment.description"
+                    v-html="attachment.description"
+                  ></div>
                   <div v-for="(file, index) in attachment.files" :key="index">
                     <div
                       :key="index"
-                      class="mb-4 flex items-center justify-between bg-white p-8 pl-10 border rounded-lg"
+                      class="mb-4 gap-4 md:gap-0 flex md:flex-row flex-col items-center justify-between bg-white md:p-8 pl-5 p-4 md:pl-10 border rounded-lg"
                     >
-                      <div class="max-w-[60%]">
+                      <div class="md:max-w-[60%]">
                         <div class="pb-1">
                           <span class="text-gray-700 font-semibold">{{
                             file.name
                           }}</span>
                         </div>
                         <div>
-                          <div class="flex gap-2">
+                          <div class="flex md:flex-row gap-2">
                             <div>
                               Descargar {{ getFileExtension(file.file_name) }}
                             </div>

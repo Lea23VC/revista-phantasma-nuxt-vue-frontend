@@ -20,5 +20,10 @@ const { content } = defineProps({
   font-family: 'Avenir', sans-serif !important;
   line-height: 1.5;
   padding: 10px;
+  font-size: 16px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 13px;
+  }
 }
 </style>
