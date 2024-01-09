@@ -22,18 +22,23 @@
       </div>
       <div class="flex flex-col space-y-2">
         <span class="font-semibold">Categorías</span
-        ><a class="text-sm" href="#">Poesía</a
-        ><a class="text-sm" href="#">Convocatorias</a
-        ><a class="text-sm" href="#">Números especiales</a
-        ><a class="text-sm" href="#">Artes Visuales</a
-        ><a class="text-sm" href="#">Crítica</a
-        ><a class="text-sm" href="#">Narrativa</a>
+        ><NuxtLink class="text-sm" to="/phantasma/poesia">Poesía</NuxtLink
+        ><NuxtLink class="text-sm" to="/phantasma/convocatorias"
+          >Convocatorias</NuxtLink
+        ><NuxtLink class="text-sm" to="/phantasma/numeros-especiales"
+          >Números especiales</NuxtLink
+        ><NuxtLink class="text-sm" to="/phantasma/artesvisuales"
+          >Artes Visuales</NuxtLink
+        ><NuxtLink class="text-sm" to="/phantasma/critica">Crítica</NuxtLink
+        ><NuxtLink class="text-sm" to="/phantasma/narrativa"
+          >Narrativa</NuxtLink
+        >
       </div>
       <div class="flex flex-col space-y-2">
         <span class="font-semibold">Recursos</span
-        ><a class="text-sm" href="#">Blog</a>
-        <a class="text-sm" href="#">Editorial</a>
-        <a class="text-sm" href="#">Contacto</a>
+        ><NuxtLink class="text-sm" to="/phantasma/blog">Blog</NuxtLink>
+        <NuxtLink class="text-sm" to="/editorial">Editorial</NuxtLink>
+        <NuxtLink class="text-sm" to="/contacto">Contacto</NuxtLink>
       </div>
       <div class="flex flex-col space-y-2">
         <span class="font-semibold">Link de interes</span
