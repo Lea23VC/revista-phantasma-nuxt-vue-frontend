@@ -29,11 +29,12 @@
               for="name"
               >Nombre</label
             ><input
+              v-model="name"
               class="flex h-10 w-full font-avenir rounded-md border border-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-gray-800 text-white"
               id="name"
               placeholder="Ingrese su nombre"
               type="text"
-              v-model="name"
+              required
             />
           </div>
           <div class="space-y-2">
@@ -46,6 +47,9 @@
               id="email"
               placeholder="Ingrese su email"
               type="email"
+              v-model="email"
+              @blur="validateEmail(email)"
+              required
             />
           </div>
           <div class="space-y-2">
@@ -57,31 +61,28 @@
               class="flex font-avenir w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-h-[100px] bg-gray-800 text-white"
               id="message"
               placeholder="Ingrese el mensaje"
+              v-model="message"
+              required
             ></textarea>
           </div>
           <button
+            @click="handleSubmit"
             class="inline-flex font-avenir items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-white text-black border-white border-2 hover:!bg-black hover:text-white duration-200"
           >
+            <span v-if="loading" class="loading loading-spinner"></span>
+
             Enviar mensaje
           </button>
         </div>
       </div>
-      <!-- <div class="md:w-1/2 flex h-full">
-        <img
-          src="/placeholder.svg"
-          alt="Contact Us"
-          class="w-full h-full object-cover self-stretch"
-          width="500"
-          height="500"
-          style="aspect-ratio: 500 / 500; object-fit: cover;"
-        />
-      </div> -->
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 import PAGE_QUERY from '@/graphql/Queries/pages/getPage.query.graphql';
+import SEND_EMAIL_MUTATION from '@/graphql/Mutations/sendEmail.mutation.graphql';
+const toast = useToast();
 
 import { Page } from '~/ts/types/page.types';
 
@@ -95,6 +96,44 @@ const { data: pageData, error } = await useAsyncQuery<{ page?: Page }>(
     slug: 'contacto',
   },
 );
+const { mutate, loading, error: mutationError } = useMutation(
+  SEND_EMAIL_MUTATION,
+);
+
+const inputError = reactive({
+  email: '',
+});
+
+async function handleSubmit() {
+  try {
+    await mutate({
+      name: name.value,
+      email: email.value,
+      message: message.value,
+    });
+    toast.add({
+      color: 'gray',
+      title: 'Mensaje enviado',
+    });
+    name.value = '';
+    email.value = '';
+    message.value = '';
+  } catch (error) {
+    console.log(error);
+    toast.add({
+      color: 'red',
+      title: 'Error al enviar el mensaje',
+    });
+  }
+}
+
+function validateEmail(email: string) {
+  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+    inputError['email'] = 'Please enter a valid email address';
+  } else {
+    inputError['email'] = '';
+  }
+}
 
 useHead({
   title: 'Contacto - Revista Phantasma',

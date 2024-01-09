@@ -79,4 +79,13 @@ export default defineNuxtConfig({
     },
     // pageTransition: { name: "page", mode: "out-in" },
   },
+
+  ui: {
+    // @ts-ignore
+    primary: "#FFFFFF",
+    notifications: {
+      // Show toasts at the top right of the screen
+      position: "top-0 bottom-auto",
+    },
+  },
 });

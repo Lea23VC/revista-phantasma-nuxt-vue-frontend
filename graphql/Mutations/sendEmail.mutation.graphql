@@ -1,0 +1,6 @@
+mutation SendEmail($email: String!, $message: String!, $name: String!) {
+  sendEmail(email: $email, message: $message, name: $name) {
+    message
+    success
+  }
+}

@@ -3,6 +3,7 @@
     <NuxtLayout>
       <NuxtLoadingIndicator color="white" />
       <NuxtPage />
+      <UNotifications />
     </NuxtLayout>
   </div>
 </template>
