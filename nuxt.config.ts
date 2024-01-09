@@ -22,7 +22,12 @@ export default defineNuxtConfig({
     "nuxt-swiper",
     "@nuxt/ui",
     "nuxt-gtag",
+    "@formkit/nuxt",
   ],
+  formkit: {
+    // Experimental support for auto loading (see note):
+    autoImport: true,
+  },
   gtag: {
     id: process.env.GTAG_ID as string,
   },

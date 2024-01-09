@@ -23,56 +23,62 @@
           </p>
         </div>
         <div class="space-y-4 flex-grow">
-          <div class="space-y-2">
-            <label
-              class="text-sm font-avenir font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-400"
-              for="name"
-              >Nombre</label
-            ><input
-              v-model="name"
-              class="flex h-10 w-full font-avenir rounded-md border border-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-gray-800 text-white"
-              id="name"
-              placeholder="Ingrese su nombre"
-              type="text"
-              required
-            />
-          </div>
-          <div class="space-y-2">
-            <label
-              class="text-sm font-avenir font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-400"
-              for="email"
-              >Email</label
-            ><input
-              class="flex font-avenir h-10 w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-gray-800 text-white"
-              id="email"
-              placeholder="Ingrese su email"
-              type="email"
-              v-model="email"
-              @blur="validateEmail(email)"
-              required
-            />
-          </div>
-          <div class="space-y-2">
-            <label
-              class="text-sm font-avenir font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-400"
-              for="message"
-              >Mensaje</label
-            ><textarea
-              class="flex font-avenir w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-h-[100px] bg-gray-800 text-white"
-              id="message"
-              placeholder="Ingrese el mensaje"
-              v-model="message"
-              required
-            ></textarea>
-          </div>
-          <button
-            @click="handleSubmit"
-            class="inline-flex font-avenir items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-white text-black border-white border-2 hover:!bg-black hover:text-white duration-200"
-          >
-            <span v-if="loading" class="loading loading-spinner"></span>
+          <FormKit :actions="false" type="form" @submit="handleSubmit">
+            <div class="space-y-2 pb-4">
+              <label
+                class="text-sm font-avenir font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-400"
+                for="name"
+                >Nombre</label
+              ><FormKit
+                v-model="name"
+                classes="flex h-10 w-full font-avenir rounded-md border border-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-gray-800 text-white"
+                id="name"
+                placeholder="Ingrese su nombre"
+                type="text"
+                required
+                cols="6"
+              />
+            </div>
+            <div class="space-y-2 pb-4">
+              <label
+                class="text-sm font-avenir font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-400"
+                for="email"
+                >Email</label
+              ><FormKit
+                class="flex font-avenir h-10 w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-gray-800 text-white"
+                id="email"
+                placeholder="Ingrese su email"
+                type="email"
+                v-model="email"
+                required
+                validation="email"
+                validation-visibility="live"
+              />
+            </div>
+            <div class="space-y-2 pb-6">
+              <label
+                class="text-sm font-avenir font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-400"
+                for="message"
+                >Mensaje</label
+              ><FormKit
+                type="textarea"
+                class="flex font-avenir w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-h-[100px] bg-gray-800 text-white"
+                id="message"
+                placeholder="Ingrese el mensaje"
+                v-model="message"
+                required
+              ></FormKit>
+            </div>
+            <FormKit
+              type="submit"
+              :disabled="loading"
+              class="inline-flex font-avenir items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-white text-black border-white border-2 hover:!bg-black hover:text-white duration-200"
+            >
+              <span v-if="loading" class="loading loading-spinner"></span>
 
-            Enviar mensaje
-          </button>
+              Enviar mensaje
+            </FormKit>
+          </FormKit>
         </div>
       </div>
     </div>
