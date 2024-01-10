@@ -35,16 +35,14 @@ const [
   useAsyncQuery<{ categories?: Category[] }>(GET_CATEGORIES_QUERY),
 ]);
 
-console.log(categoriesData);
-
-// useHead({
-//   title: 'Revista Phantasma | Arte y Literatura',
-//   meta: [
-//     {
-//       content:
-//         'Revista de arte y literatura, espacio creativo y crítico. Colabora con Phantasma',
-//       name: 'Revista Phantasma',
-//     },
-//   ],
-// });
+useHead({
+  title: 'Revista Phantasma | Arte y Literatura',
+  meta: [
+    {
+      content:
+        'Revista de arte y literatura, espacio creativo y crítico. Colabora con Phantasma',
+      name: 'Revista Phantasma',
+    },
+  ],
+});
 </script>
