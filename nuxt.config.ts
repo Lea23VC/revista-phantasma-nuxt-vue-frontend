@@ -75,9 +75,30 @@ export default defineNuxtConfig({
           name: "Revista Phantasma",
         },
         {
+          name: "description",
+          content:
+            "Revista de arte y literatura, espacio creativo y crítico. Colabora con Phantasma",
+        },
+        {
+          name: "keywords",
+          content:
+            "Revista Phantasma, revista, arte, literatura, arte y literataura, arte, revista de arte y literatura",
+        },
+        {
           hid: "og:image",
           property: "og:image",
-          content: "/favicon.png",
+          content: "https://phantasma.cl/favicon.png",
+        },
+        {
+          hid: "og:description",
+          property: "og:description",
+          content:
+            "Revista de arte y literatura, espacio creativo y crítico. Colabora con Phantasma",
+        },
+        {
+          hid: "og:title",
+          property: "og:title",
+          content: "Revista Phantasma | Arte y Literatura",
         },
       ],
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.png" }],

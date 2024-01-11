@@ -153,10 +153,6 @@ useHead({
   meta: [
     {
       content: post?.content_without_html,
-      name: title,
-    },
-    {
-      content: post?.content_without_html,
       name: 'description',
     },
     {
@@ -196,8 +192,9 @@ useSeoMeta({
   ogUrl: 'https://phantasma.cl/post/' + post?.slug,
   ogType: 'article',
   author: post?.author?.name,
-  articlePublishedTime: post?.publish_at,
   // @ts-ignore
   articleAuthor: post?.author?.name,
+  articlePublishedTime: post?.publish_at,
+  // @ts-ignore
 });
 </script>
