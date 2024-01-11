@@ -16,8 +16,11 @@ const variables = reactive(
   query.value
     ? {
         where: getPostsWhereSearchConditions(query.value),
+        first: 9,
       }
-    : {},
+    : {
+        first: 9,
+      },
 );
 
 // Function to update the page title
