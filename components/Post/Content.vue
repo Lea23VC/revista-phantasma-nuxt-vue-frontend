@@ -26,4 +26,10 @@ const { content } = defineProps({
     font-size: 13px;
   }
 }
+:deep(iframe) {
+  @media screen and (max-width: 768px) {
+    width: 100% !important;
+    height: 250px !important;
+  }
+}
 </style>
