@@ -8,7 +8,7 @@
     />
   </div>
   <div class="bg-black">
-    <div class="max-w-5xl m-auto py-10 lg:py-20 px-6">
+    <div class="max-w-5xl m-auto pb-5 md:py-10 lg:py-20 md:px-6">
       <div class="max-w-[980px] m-auto">
         <div class="bg-white p-4 px-6">
           <article class="border border-phantasma-gray">
