@@ -7,6 +7,7 @@
         :src="backgroundImage"
         class="object-cover h-full w-full"
         :placeholder="blur"
+        quality="60"
       />
       <div
         class="absolute top-0 left-0 w-full h-full bg-black opacity-30"
