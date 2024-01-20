@@ -1,6 +1,7 @@
 <template>
   <div class="bg-black">
     <BannersCategoryBanner
+      name="Editorial"
       :backgroundImage="pageData.page?.background_image?.original_url"
       :blur="
         pageData.page?.background_image?.responsive_images
@@ -8,10 +9,12 @@
       "
     />
 
-    <div class="max-w-5xl px-6 m-auto pb-40">
+    <div
+      class="max-w-5xl px-6 pt-20 md:pt-10 m-auto pb-40 md:flex-row bg-black text-white items-stretch"
+    >
       <div class="pt-24 hidden sm:block pb-20">
         <h1
-          class="lg:text-[80px] text-5xl text-white font-avenir font-bold pb-4"
+          class="lg:text-[80px] text-5xl text-white font-avenir font-bold md:pb-4 pb-8"
         >
           Editorial
         </h1>
@@ -21,11 +24,11 @@
         </div>
       </div>
 
-      <div class="pb-6">
+      <div class="md:pb-6 pb-8">
         <h2 class="text-white font-avenir font-bold text-4xl">Coordinación</h2>
       </div>
       <div>
-        <div class="grid grid-cols-2 gap-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
           <div
             v-for="(member, index) in editorialMembersData.editorialMembers"
             :key="index"

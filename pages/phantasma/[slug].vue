@@ -10,7 +10,9 @@
         "
       />
     </div>
-    <div class="max-w-5xl px-6 m-auto pb-40">
+    <div
+      class="max-w-5xl px-6 pt-20 md:pt-10 m-auto pb-40 md:flex-row bg-black text-white items-stretch"
+    >
       <div class="pt-24 hidden sm:block">
         <h1
           class="lg:text-[75px] text-5xl text-white font-avenir font-bold pb-4 pt-6"
@@ -23,7 +25,7 @@
         </div>
       </div>
 
-      <div class="py-20">
+      <div class="md:py-20 py-0">
         <BlogGrid :posts="category?.posts" />
       </div>
     </div>

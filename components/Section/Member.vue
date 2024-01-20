@@ -11,14 +11,14 @@
         class="font-avenir font-bold text-2xl text-white"
         :to="`/phantasma/autor/${member.author.id}`"
       >
-        <div class="tooltip tooltip-bottom" data-tip="Ver entradas">
+        <div class="tooltip tooltip-bottom text-left" data-tip="Ver entradas">
           {{ member.name }}
         </div>
       </NuxtLink>
     </div>
 
     <!-- If member.author does not exist, just display the name -->
-    <h3 v-else class="font-avenir font-bold text-2xl text-white">
+    <h3 v-else class="font-avenir font-bold text-2xl text-white text-left">
       {{ member.name }}
     </h3>
   </div>
