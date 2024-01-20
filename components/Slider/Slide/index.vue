@@ -3,10 +3,10 @@
     <!-- Background Image -->
     <div class="absolute h-full w-full">
       <NuxtImg
+        quality="60"
         :src="backgroundImage"
         class="object-cover h-full w-full"
         sizes="100vw sm:50vw md:400px lg:1200 xl:1600 2xl:1980"
-        loading="lazy"
         :placeholder="blur"
       />
       <div
