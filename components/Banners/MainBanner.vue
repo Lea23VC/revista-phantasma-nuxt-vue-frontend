@@ -88,9 +88,7 @@
 </template>
 
 <script setup>
-const backgroundImage = ref(
-  'https://static.wixstatic.com/media/9b943a_89ad18ab9c194897a2f504267f1f75b9~mv2.jpg/v1/fill/w_794,h_447,al_c,q_80,enc_auto/9b943a_89ad18ab9c194897a2f504267f1f75b9~mv2.jpg',
-);
+const backgroundImage = ref('main-background.webp');
 const firstText = ref('Phantasma');
 const secondText = ref('Phantasma');
 const leftLineColor = ref('white');
