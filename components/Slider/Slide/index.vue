@@ -8,6 +8,7 @@
         class="object-cover h-full w-full"
         sizes="100vw sm:50vw md:400px lg:1200 xl:1600 2xl:1980"
         :placeholder="blur"
+        :alt="'Imagen destacada de post: ' + name"
       />
       <div
         class="absolute top-0 left-0 w-full h-full bg-black opacity-50"

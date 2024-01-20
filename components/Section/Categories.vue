@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import { Category } from '@/ts/types/category.types';
+import type { Category } from '@/ts/types/category.types';
 
 const { categories } = defineProps({
   categories: {

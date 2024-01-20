@@ -1,6 +1,7 @@
 <template>
   <div class="bg-black">
     <BannersCategoryBanner
+      name="Contacto"
       :backgroundImage="pageData.page?.background_image?.original_url"
       :blur="
         pageData.page?.background_image?.responsive_images
@@ -90,7 +91,7 @@ import PAGE_QUERY from '@/graphql/Queries/pages/getPage.query.graphql';
 import SEND_EMAIL_MUTATION from '@/graphql/Mutations/sendEmail.mutation.graphql';
 const toast = useToast();
 
-import { Page } from '~/ts/types/page.types';
+import type { Page } from '~/ts/types/page.types';
 
 const name = ref('');
 const email = ref('');

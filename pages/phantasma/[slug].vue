@@ -34,7 +34,7 @@
 
 <script setup lang="ts">
 import GET_CATEGORY_QUERY from '@/graphql/Queries/categories/getCategory.query.graphql';
-import { Category } from '@/ts/types/category.types';
+import type { Category } from '@/ts/types/category.types';
 
 const route = useRoute();
 const slug = route.params.slug as string;

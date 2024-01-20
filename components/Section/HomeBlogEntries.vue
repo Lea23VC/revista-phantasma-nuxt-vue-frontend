@@ -28,7 +28,7 @@
 </template>
 
 <script lang="ts" setup>
-import { Post } from '@/ts/types/post.types';
+import type { Post } from '@/ts/types/post.types';
 
 const { posts } = defineProps({
   posts: {

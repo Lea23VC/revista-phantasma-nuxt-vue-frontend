@@ -67,6 +67,9 @@ export default defineNuxtConfig({
   routeRules: { "/*": { cors: true } },
   app: {
     head: {
+      htmlAttrs: {
+        lang: "es",
+      },
       title: "Revista Phantasma | Arte y Literatura",
       meta: [
         {

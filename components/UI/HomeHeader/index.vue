@@ -16,7 +16,7 @@
 
 <script setup lang="ts">
 import GET_NAVIGATION_QUERY from '@/graphql/Queries/navigation/getNavigation.query.graphql';
-import { Navigation } from '~/ts/types/navigation.types';
+import type { Navigation } from '~/ts/types/navigation.types';
 
 const { data, pending } = useLazyAsyncQuery<{
   navigation?: Navigation[];

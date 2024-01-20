@@ -24,8 +24,8 @@
 <script setup lang="ts">
 import GET_POST_QUERY from '@/graphql/Queries/posts/getPosts.query.graphql';
 import GET_CATEGORIES_QUERY from '@/graphql/Queries/categories/getCategories.query.graphql';
-import { Post } from '@/ts/types/post.types';
-import { Category } from '@/ts/types/category.types';
+import type { Post } from '@/ts/types/post.types';
+import type { Category } from '@/ts/types/category.types';
 
 const [
   { data: postsData, error: postsError },

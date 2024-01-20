@@ -25,7 +25,7 @@
 </template>
 
 <script lang="ts" setup>
-import { EditorialMember } from '~/ts/types/editorialMember.types';
+import type { EditorialMember } from '~/ts/types/editorialMember.types';
 
 const { member } = defineProps({
   member: {

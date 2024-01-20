@@ -43,8 +43,8 @@
 <script lang="ts" setup>
 import PAGE_QUERY from '@/graphql/Queries/pages/getPage.query.graphql';
 import EDITORIAL_MEMBERS_QUERY from '@/graphql/Queries/editorialMembers/getEditorialMembers.query.graphql';
-import { EditorialMember } from '~/ts/types/editorialMember.types';
-import { Page } from '~/ts/types/page.types';
+import type { EditorialMember } from '~/ts/types/editorialMember.types';
+import type { Page } from '~/ts/types/page.types';
 
 const [
   { data: pageData, error },

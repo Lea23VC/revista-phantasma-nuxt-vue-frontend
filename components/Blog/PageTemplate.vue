@@ -39,7 +39,7 @@
 </template>
 
 <script setup lang="ts">
-import { PostPaginator } from '@/ts/types/post.types';
+import type { PostPaginator } from '@/ts/types/post.types';
 import GET_POSTS_QUERY from '@/graphql/Queries/posts/getPosts.query.graphql';
 
 const { variables, isAuthor, queryTitle } = defineProps({

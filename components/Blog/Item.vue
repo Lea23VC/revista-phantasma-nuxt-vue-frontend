@@ -32,7 +32,7 @@
 </template>
 
 <script setup lang="ts">
-import { Post } from '../../ts/types/post.types';
+import type { Post } from '../../ts/types/post.types';
 
 const { item, height } = defineProps({
   item: {

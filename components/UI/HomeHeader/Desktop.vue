@@ -97,7 +97,7 @@
 </template>
 
 <script setup lang="ts">
-import { Navigation } from '~/ts/types/navigation.types';
+import type { Navigation } from '~/ts/types/navigation.types';
 
 const scrollY = ref(0);
 

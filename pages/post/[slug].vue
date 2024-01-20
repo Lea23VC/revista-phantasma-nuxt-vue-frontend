@@ -122,7 +122,7 @@
 import GET_POST_QUERY from '../../graphql/Queries/posts/getPost.query.graphql';
 import GET_POSTS_QUERY from '../../graphql/Queries/posts/getPosts.query.graphql';
 import { getFileExtension } from '@/utils/transformation/getFileExtention';
-import { Post } from '../../ts/types/post.types';
+import type { Post } from '../../ts/types/post.types';
 // @ts-ignore
 const route = useRoute();
 
