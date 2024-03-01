@@ -46,13 +46,22 @@
         ><a class="text-sm" href="#">Privacidad</a>
       </div>
     </div>
-    <div class="mt-8 border-t border-gray-700 pt-4 md:flex md:justify-between">
+    <div
+      class="mt-8 border-t border-gray-700 pt-4 md:flex md:justify-between text-center md:text-left"
+    >
       <p class="text-xs text-gray-400">
         © 2024 Revista Phantasma. Todos los derechos reservados.
       </p>
-      <p class="text-xs text-gray-400 mt-4 md:mt-0">
-        Lorem ipsum
-      </p>
+      <NuxtLink to="https://github.com/Lea23VC" target="_blank">
+        <div
+          class="mt-4 md:mt-0 flex flex-row items-center gap-2 justify-center md:justify-start"
+        >
+          <SVGIconGithub />
+          <p class="text-xs text-gray-400">
+            Lea23VC
+          </p>
+        </div></NuxtLink
+      >
     </div>
   </footer></template
 >
