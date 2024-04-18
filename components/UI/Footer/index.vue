@@ -52,16 +52,6 @@
       <p class="text-xs text-gray-400">
         © 2024 Revista Phantasma. Todos los derechos reservados.
       </p>
-      <NuxtLink to="https://github.com/Lea23VC" target="_blank">
-        <div
-          class="mt-4 md:mt-0 flex flex-row items-center gap-2 justify-center md:justify-start"
-        >
-          <SVGIconGithub />
-          <p class="text-xs text-gray-400">
-            Lea23VC
-          </p>
-        </div></NuxtLink
-      >
     </div>
   </footer></template
 >
