@@ -51,7 +51,6 @@ const dynamicClass = computed(() => {
     'object-cover': true,
     'h-full': true,
     'w-full': true,
-    'object-center': true,
     [`object-${position}`]: true,
   };
 });
