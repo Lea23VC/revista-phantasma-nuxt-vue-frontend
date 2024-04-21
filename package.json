@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "1.2.0",
-    "@nuxtjs/apollo": "^5.0.0-alpha.7",
+    "@nuxtjs/apollo": "^5.0.0-alpha.12",
     "@nuxtjs/google-fonts": "^3.2.0",
     "autoprefixer": "^10.4.19",
     "daisyui": "^4.10.2",
@@ -29,6 +29,7 @@
     "@nuxt/image": "^1.5.0",
     "@nuxt/ui": "^2.15.2",
     "@vercel/speed-insights": "^1.0.10",
+    "@vue/apollo-composable": "^4.0.2",
     "nuxt-swiper": "^1.2.2",
     "sharp": "^0.33.3",
     "vue-easy-lightbox": "^1.19.0",
