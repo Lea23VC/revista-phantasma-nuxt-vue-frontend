@@ -1,5 +1,5 @@
 <template>
-  <div class="font-avenir !text-black" v-html="content"></div>
+  <div class="font-avenir !text-black post-content" v-html="content"></div>
 </template>
 
 <script setup>
@@ -12,6 +12,16 @@ const { content } = defineProps({
 </script>
 
 <style scoped>
+:deep(img) {
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+/* add hover opacity to image*/
+:deep(img:hover) {
+  opacity: 0.8;
+}
+
 :deep(img) {
   padding: 0 20px 0 20px;
 }

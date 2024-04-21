@@ -18,7 +18,7 @@ const { authorName, date } = defineProps({
     type: String,
   },
   id: {
-    type: Number,
+    type: String,
   },
   date: {
     type: String,

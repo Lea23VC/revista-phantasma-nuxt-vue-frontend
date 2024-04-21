@@ -4,6 +4,7 @@ query Post($slug: String!) {
     slug
     content
     content_without_html
+    content_images
     publish_at
     title
     author {

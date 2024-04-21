@@ -31,6 +31,7 @@
     "@vercel/speed-insights": "^1.0.5",
     "nuxt-swiper": "^1.2.2",
     "sharp": "^0.33.3",
+    "vue-easy-lightbox": "^1.19.0",
     "vue-social-sharing": "^4.0.0-alpha4",
     "vue-use-fixed-header": "^2.0.0"
   }

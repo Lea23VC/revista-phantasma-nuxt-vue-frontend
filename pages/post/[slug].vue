@@ -88,6 +88,13 @@
                   <PostContent :content="post?.content" />
                 </div>
 
+                <VueEasyLightbox
+                  :visible="visible"
+                  :imgs="images"
+                  :index="imageIndex"
+                  @hide="hideLightbox"
+                />
+
                 <div class="pt-10 pb-5">
                   <div class="divider"></div>
                 </div>
@@ -119,6 +126,7 @@
 </template>
 
 <script lang="ts" setup>
+import VueEasyLightbox from 'vue-easy-lightbox';
 // @ts-ignore
 import GET_POST_QUERY from '../../graphql/Queries/posts/getPost.query.graphql';
 import GET_POSTS_QUERY from '../../graphql/Queries/posts/getPosts.query.graphql';
@@ -133,6 +141,8 @@ const variables = {
   slug: slug,
 };
 
+const visible = ref(false);
+
 const [
   { data, error },
   { data: otherPostsData, error: otherPostsError },
@@ -146,6 +156,28 @@ const [
 
 const post = data?.value?.post;
 const posts = otherPostsData?.value?.posts?.data;
+
+const images = ref(post?.content_images);
+const imageIndex = ref(0);
+const showLightbox = (index: number) => {
+  imageIndex.value = index;
+  visible.value = true;
+};
+
+onMounted(() => {
+  const postContent = document.querySelector('.post-content');
+  if (postContent === null) return;
+  const imgElements = postContent.getElementsByTagName('img');
+  images.value = Array.from(imgElements).map((img) => img.src);
+  Array.from(imgElements).forEach((img, index) => {
+    img.addEventListener('click', () => showLightbox(index));
+  });
+});
+
+const hideLightbox = () => (visible.value = false);
+console.log('Images: ', images);
+
+console.log('Visible: ', visible);
 
 const title = post?.title + ' | Revista Phantasma';
 
