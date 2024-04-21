@@ -5,10 +5,7 @@
         <NuxtImg
           :src="item.featured_image.preview_url"
           alt="Imagen post"
-          :class="
-            'absolute inset-0 w-full h-full object-cover group-hover:scale-125 transition duration-500 cursor-pointer object-' +
-            item.featured_image.positions.preview
-          "
+          :class="dynamicClass"
         />
         <div
           class="absolute top-0 left-0 w-full h-full bg-black opacity-40"
@@ -46,6 +43,22 @@ const { item, height } = defineProps({
     type: String,
     default: '450px',
   },
+});
+
+const dynamicClass = computed(() => {
+  return {
+    'item-height': true,
+    absolute: true,
+    'inset-0': true,
+    'w-full': true,
+    'h-full': true,
+    'object-cover': true,
+    'group-hover:scale-125': true,
+    transition: true,
+    'duration-500': true,
+    'cursor-pointer': true,
+    [`object-${item.featured_image.positions.preview}`]: true,
+  };
 });
 </script>
 

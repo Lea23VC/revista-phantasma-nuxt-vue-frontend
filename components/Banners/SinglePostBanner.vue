@@ -5,7 +5,7 @@
       <NuxtImg
         placeholder
         :src="backgroundImage"
-        :class="'object-cover h-full w-full object-' + position"
+        :class="dynamicClass"
         :placeholder="blur"
         quality="60"
         loading=""
@@ -44,6 +44,16 @@ const { backgroundImage, blur, position } = defineProps({
     type: String,
     default: 'center',
   },
+});
+
+const dynamicClass = computed(() => {
+  return {
+    'object-cover': true,
+    'h-full': true,
+    'w-full': true,
+    'object-center': true,
+    [`object-${position}`]: true,
+  };
 });
 </script>
 
