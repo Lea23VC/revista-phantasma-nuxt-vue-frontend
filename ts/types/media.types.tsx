@@ -15,6 +15,10 @@ export type Media = {
   updated_at: string;
   original_url: string;
   preview_url: string;
+  positions: {
+    banner: string;
+    preview: string;
+  };
 };
 
 type ResponsiveImages = {

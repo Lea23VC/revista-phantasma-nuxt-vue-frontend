@@ -4,8 +4,11 @@
       <div class="relative h-full p-6">
         <NuxtImg
           :src="item.featured_image.preview_url"
-          alt="Left Image"
-          class="absolute inset-0 w-full h-full object-cover group-hover:scale-125 transition duration-500 cursor-pointer"
+          alt="Imagen post"
+          :class="
+            'absolute inset-0 w-full h-full object-cover group-hover:scale-125 transition duration-500 cursor-pointer ' +
+            item.featured_image.positions.preview
+          "
         />
         <div
           class="absolute top-0 left-0 w-full h-full bg-black opacity-40"

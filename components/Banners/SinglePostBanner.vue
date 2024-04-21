@@ -5,7 +5,7 @@
       <NuxtImg
         placeholder
         :src="backgroundImage"
-        class="object-cover h-full w-full"
+        :class="'object-cover h-full w-full ' + position"
         :placeholder="blur"
         quality="60"
         loading=""
@@ -29,7 +29,7 @@
 </template>
 
 <script setup>
-const { backgroundImage, blur } = defineProps({
+const { backgroundImage, blur, position } = defineProps({
   backgroundImage: {
     type: String,
     required: true,
@@ -39,6 +39,10 @@ const { backgroundImage, blur } = defineProps({
   },
   title: {
     type: String,
+  },
+  position: {
+    type: String,
+    default: 'center',
   },
 });
 </script>

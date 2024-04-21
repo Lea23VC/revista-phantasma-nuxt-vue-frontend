@@ -5,6 +5,7 @@
       :blur="
         post?.featured_image.responsive_images.media_library_original?.base64svg
       "
+      :position="post?.featured_image.positions.banner"
     />
   </div>
   <div class="bg-black">
