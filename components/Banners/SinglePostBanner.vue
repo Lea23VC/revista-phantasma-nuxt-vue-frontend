@@ -6,6 +6,7 @@
         placeholder
         :src="backgroundImage"
         :class="dynamicClass"
+        :style="style"
         :placeholder="blur"
         quality="60"
         loading=""
@@ -42,7 +43,6 @@ const { backgroundImage, blur, position } = defineProps({
   },
   position: {
     type: String,
-    default: 'center',
   },
 });
 
@@ -51,7 +51,11 @@ const dynamicClass = computed(() => {
     'object-cover': true,
     'h-full': true,
     'w-full': true,
-    [`object-${position}`]: true,
+  };
+});
+const style = computed(() => {
+  return {
+    'object-position': position ?? 'center',
   };
 });
 </script>

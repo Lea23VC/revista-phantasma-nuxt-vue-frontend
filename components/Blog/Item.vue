@@ -6,6 +6,7 @@
           :src="item.featured_image.preview_url"
           alt="Imagen post"
           :class="dynamicClass"
+          :style="style"
         />
         <div
           class="absolute top-0 left-0 w-full h-full bg-black opacity-40"
@@ -57,7 +58,12 @@ const dynamicClass = computed(() => {
     transition: true,
     'duration-500': true,
     'cursor-pointer': true,
-    [`object-${item.featured_image.positions.preview}`]: true,
+  };
+});
+
+const style = computed(() => {
+  return {
+    'object-position': item.featured_image.positions.preview,
   };
 });
 </script>
