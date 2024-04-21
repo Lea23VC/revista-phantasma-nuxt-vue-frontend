@@ -15,7 +15,7 @@
     "@nuxtjs/google-fonts": "^3.0.2",
     "autoprefixer": "^10.4.16",
     "daisyui": "^4.5.0",
-    "nuxt": "^3.7.4",
+    "nuxt": "^3.11.2",
     "nuxt-gtag": "^1.1.1",
     "postcss": "^8.4.31",
     "prettier": "^3.0.3",
