@@ -7,6 +7,10 @@ query Page($slug: String!) {
       uuid
       preview_url
       original_url
+      positions {
+        banner
+        preview
+      }
       responsive_images {
         media_library_original {
           base64svg
