@@ -88,12 +88,14 @@
                   <PostContent :content="post?.content" />
                 </div>
 
-                <VueEasyLightbox
-                  :visible="visible"
-                  :imgs="images"
-                  :index="imageIndex"
-                  @hide="hideLightbox"
-                />
+                <ClientOnly>
+                  <VueEasyLightbox
+                    :visible="visible"
+                    :imgs="images"
+                    :index="imageIndex"
+                    @hide="hideLightbox"
+                  />
+                </ClientOnly>
 
                 <div class="pt-10 pb-5">
                   <div class="divider"></div>
