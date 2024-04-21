@@ -5,7 +5,7 @@
       <NuxtImg
         placeholder
         :src="backgroundImage"
-        :class="'object-cover h-full w-full ' + position"
+        :class="'object-cover h-full w-full object-' + position"
         :placeholder="blur"
         quality="60"
         loading=""

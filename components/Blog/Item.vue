@@ -6,7 +6,7 @@
           :src="item.featured_image.preview_url"
           alt="Imagen post"
           :class="
-            'absolute inset-0 w-full h-full object-cover group-hover:scale-125 transition duration-500 cursor-pointer ' +
+            'absolute inset-0 w-full h-full object-cover group-hover:scale-125 transition duration-500 cursor-pointer object-' +
             item.featured_image.positions.preview
           "
         />
