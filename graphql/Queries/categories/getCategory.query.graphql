@@ -29,6 +29,10 @@ query Category($slug: String!) {
         id
         updated_at
         preview_url
+        positions {
+          banner
+          preview
+        }
         responsive_images {
           media_library_original {
             base64svg
