@@ -55,7 +55,7 @@ export default defineNuxtConfig({
     },
   },
   image: {
-    domains: ["revista-phantasma-media.s3.amazonaws.com"],
+    domains: ["phantasma-media.s3.amazonaws.com"],
   },
   // build: {
   //   // @ts-ignore
