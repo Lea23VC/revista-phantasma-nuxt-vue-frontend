@@ -4,6 +4,16 @@ export default defineNuxtConfig({
   //   pageTransition: { name: "page", mode: "out-in" },
   // },
 
+  runtimeConfig: {
+    public: {
+      backendEndpoint: process.env.NUXT_BACKEND_ENDPOINT as string,
+      targetNames: (process.env.NUXT_TARGET_NAMES as string).split(","),
+      simpleTargetNames: (process.env.NUXT_SIMPLE_TARGET_NAMES as string).split(
+        ",",
+      ),
+    },
+  },
+
   typescript: {
     strict: true,
   },

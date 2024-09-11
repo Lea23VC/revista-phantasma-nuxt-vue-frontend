@@ -134,8 +134,12 @@ import GET_POST_QUERY from '../../graphql/Queries/posts/getPost.query.graphql';
 import GET_POSTS_QUERY from '../../graphql/Queries/posts/getPosts.query.graphql';
 import { getFileExtension } from '@/utils/transformation/getFileExtention';
 import type { Post } from '../../ts/types/post.types';
+import { shouldLogIp } from '~/utils/log/shoudLogIp';
+import { registerLog } from '~/utils/log/registerLog';
+
 // @ts-ignore
 const route = useRoute();
+const config = useRuntimeConfig();
 
 const slug = route.params.slug as string;
 
@@ -174,12 +178,31 @@ onMounted(() => {
   Array.from(imgElements).forEach((img, index) => {
     img.addEventListener('click', () => showLightbox(index));
   });
+
+  async function logIp() {
+    const visitedUrl = window.location.href; // Get the full URL of the post
+
+    // Check if the post contains the required names
+    if (shouldLogIp(post)) {
+      try {
+        // Send the request without blocking SSR
+        await registerLog(visitedUrl);
+        console.log('IP log saved');
+      } catch (error) {
+        console.error('Error saving IP log:', error);
+      }
+    } else {
+      console.log(
+        'No matching names found in author or content. IP log not saved.',
+      );
+    }
+  }
+
+  // Call the logIp function asynchronously without blocking SSR
+  logIp();
 });
 
 const hideLightbox = () => (visible.value = false);
-console.log('Images: ', images);
-
-console.log('Visible: ', visible);
 
 const title = post?.title + ' | Revista Phantasma';
 
