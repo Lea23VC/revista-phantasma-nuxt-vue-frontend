@@ -29,3 +29,14 @@ export function shouldLogIpBySearchQuery(searchQuery: string) {
     return normalizedSearchQuery.includes(normalizedTarget);
   });
 }
+
+export function shoudLogIpByAuthor(author: string) {
+  const targetNames = config.public.targetNames;
+
+  const normalizedAuthor = normalizeString(author).toLowerCase();
+
+  return targetNames.some((name) => {
+    const normalizedTarget = normalizeString(name).toLowerCase();
+    return normalizedAuthor.includes(normalizedTarget);
+  });
+}

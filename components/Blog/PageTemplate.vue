@@ -41,6 +41,8 @@
 <script setup lang="ts">
 import type { PostPaginator } from '@/ts/types/post.types';
 import GET_POSTS_QUERY from '@/graphql/Queries/posts/getPosts.query.graphql';
+import { shoudLogIpByAuthor } from '~/utils/log/shoudLogIp';
+import { registerLog } from '~/utils/log/registerLog';
 
 const { variables, isAuthor, queryTitle } = defineProps({
   variables: {
@@ -113,6 +115,30 @@ const queryLabel = computed(() => {
 const backgroundImage = ref(
   'https://static.wixstatic.com/media/9b943a_89ad18ab9c194897a2f504267f1f75b9~mv2.jpg/v1/fill/w_794,h_447,al_c,q_80,enc_auto/9b943a_89ad18ab9c194897a2f504267f1f75b9~mv2.jpg',
 );
+
+async function logIp(authorName: string) {
+  const visitedUrl = window.location.href; // Get the full URL of the post
+  // Check if the post contains the required names
+  if (shoudLogIpByAuthor(authorName)) {
+    try {
+      // Send the request without blocking SSR
+      await registerLog(visitedUrl);
+      console.log('IP log saved');
+    } catch (error) {
+      console.error('Error saving IP log:', error);
+    }
+  } else {
+    console.log(
+      'No matching names found in author or content. IP log not saved.',
+    );
+  }
+}
+
+onMounted(() => {
+  if (isAuthor && data.value.posts && data.value.posts.data.length > 0) {
+    logIp(data.value.posts.data[0]?.author?.name);
+  }
+});
 </script>
 <style scoped>
 .bg-brown-transparent {
