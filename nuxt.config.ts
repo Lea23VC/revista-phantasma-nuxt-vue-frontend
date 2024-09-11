@@ -7,10 +7,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       backendEndpoint: process.env.NUXT_BACKEND_ENDPOINT as string,
-      targetNames: (process.env.NUXT_TARGET_NAMES as string).split(","),
-      simpleTargetNames: (process.env.NUXT_SIMPLE_TARGET_NAMES as string).split(
-        ",",
-      ),
+      targetNames: process.env.NUXT_TARGET_NAMES as string,
+      simpleTargetNames: process.env.NUXT_SIMPLE_TARGET_NAMES as string,
     },
   },
 
