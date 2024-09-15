@@ -15,14 +15,17 @@ export default defineNuxtConfig({
   typescript: {
     strict: true,
   },
+
   devtools: { enabled: true },
   css: ["~/assets/css/main.css"],
+
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
   },
+
   modules: [
     "@nuxtjs/google-fonts",
     "@nuxtjs/apollo",
@@ -32,13 +35,16 @@ export default defineNuxtConfig({
     "nuxt-gtag",
     "@formkit/nuxt",
   ],
+
   formkit: {
     // Experimental support for auto loading (see note):
     autoImport: true,
   },
+
   gtag: {
     id: process.env.GTAG_ID as string,
   },
+
   googleFonts: {
     download: true,
     families: {
@@ -54,12 +60,14 @@ export default defineNuxtConfig({
       },
     },
   },
+
   image: {
     domains: [
       "phantasma-media.s3.amazonaws.com",
       "d39zyebo4inxpy.cloudfront.net",
     ],
   },
+
   // build: {
   //   // @ts-ignore
   //   extend(config: any) {
@@ -76,6 +84,7 @@ export default defineNuxtConfig({
   },
 
   routeRules: { "/*": { cors: true } },
+
   app: {
     head: {
       htmlAttrs: {
@@ -128,4 +137,6 @@ export default defineNuxtConfig({
       position: "top-0 bottom-auto",
     },
   },
+
+  compatibilityDate: "2024-09-15",
 });
