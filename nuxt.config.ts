@@ -10,6 +10,33 @@ export default defineNuxtConfig({
       targetNames: process.env.NUXT_TARGET_NAMES as string,
       simpleTargetNames: process.env.NUXT_SIMPLE_TARGET_NAMES as string,
     },
+    motion: {
+      directives: {
+        "pop-bottom": {
+          initial: {
+            scale: 0,
+            opacity: 0,
+            y: 100,
+          },
+          visible: {
+            scale: 1,
+            opacity: 1,
+            y: 0,
+          },
+        },
+
+        "fade-slide-up": {
+          initial: {
+            opacity: 0,
+            y: 100,
+          },
+          visible: {
+            opacity: 1,
+            y: 0,
+          },
+        },
+      },
+    },
   },
 
   typescript: {
@@ -34,6 +61,7 @@ export default defineNuxtConfig({
     "@nuxt/ui",
     "nuxt-gtag",
     "@formkit/nuxt",
+    "@vueuse/motion/nuxt",
   ],
 
   formkit: {

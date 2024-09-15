@@ -16,13 +16,26 @@
         <div class="relative z-10 grid grid-cols-7 gap-4 gap-x-6 w-full">
           <div class="col-span-full">
             <div class="flex flex-row justify-center">
+              <!-- First Text Animated with Motion -->
               <h1
+                v-motion="{
+                  initial: { opacity: 0, y: 100 },
+                  visibleOnce: { opacity: 1, y: 0 },
+                }"
+                visible-once
+                :duration="1200"
                 class="mt-2 text-right font-libre-baskerville text-5xl tracking-tight text-white md:text-6xl lg:text-7xl xl:text-7xl 2xl:text-8xl"
               >
                 {{ firstText }}
               </h1>
               <div class="relative w-20">
+                <!-- Left Line Animated with Motion -->
                 <div
+                  v-motion="{
+                    initial: { opacity: 0, width: '0%' },
+                    visibleOnce: { opacity: 1, width: '100%' },
+                  }"
+                  id="left-line"
                   :style="{ backgroundColor: leftLineColor }"
                   class="absolute right-0 top-1/2 h-4 w-full -translate-y-1/2 transform"
                 ></div>
@@ -32,12 +45,27 @@
           <div class="col-span-full">
             <div class="flex flex-row justify-end">
               <div class="relative w-40">
+                <!-- Right Line Animated with Motion -->
                 <div
+                  v-motion="{
+                    initial: { opacity: 0, width: '0%' },
+                    visibleOnce: { opacity: 1, width: '100%' },
+                  }"
+                  id="right-line"
                   :style="{ backgroundColor: rightLineColor }"
                   class="absolute right-0 top-1/2 h-4 w-full -translate-y-1/2 transform"
                 ></div>
               </div>
+              <!-- Second Text Animated with Motion -->
               <h1
+                v-motion="{
+                  initial: {
+                    opacity: 0,
+                    y: 100,
+                  },
+                  visibleOnce: { opacity: 1, y: 0 },
+                }"
+                :duration="1200"
                 class="mt-2 text-right font-libre-baskerville text-5xl tracking-tight text-white md:text-7xl xl:text-7xl 2xl:text-8xl"
               >
                 {{ secondText }}
@@ -58,7 +86,7 @@
         <div class="w-full">
           <NuxtImg
             class="z-20 relative h-40 xl:h-44 2xl:h-48"
-            src="https://static.wixstatic.com/media/9b943a_337e63d1abe74f3a981d8ea605bdcd93~mv2.jpg/v1/crop/x_0,y_120,w_794,h_529/fill/w_368,h_245,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/fotos-de-fantasmas-de-principios-del-sig.jpg"
+            src="/main-background.webp"
           />
         </div>
 
@@ -78,16 +106,16 @@
         <div
           class="absolute right-0 top-1/2 h-px w-16 -translate-y-1/2 transform bg-white"
         ></div>
-
-        <!-- Brown transparent rectangle in the middle -->
       </div>
     </div>
     <!-- Jumbotron -->
   </section>
-  <!-- Section: Design Block -->
 </template>
 
 <script setup>
+import { ref } from 'vue';
+
+// Define your reactive data
 const backgroundImage = ref('main-background.webp');
 const firstText = ref('Phantasma');
 const secondText = ref('Phantasma');

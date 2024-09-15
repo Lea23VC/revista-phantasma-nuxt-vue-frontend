@@ -30,6 +30,7 @@
     "@nuxt/ui": "^2.18.4",
     "@vercel/speed-insights": "^1.0.12",
     "@vue/apollo-composable": "^4.2.1",
+    "@vueuse/motion": "^2.2.5",
     "nuxt-swiper": "^1.2.2",
     "sharp": "^0.33.5",
     "vue-easy-lightbox": "^1.19.0",
