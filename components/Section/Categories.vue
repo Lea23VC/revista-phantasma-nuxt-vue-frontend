@@ -10,6 +10,11 @@
             v-for="(item, index) in categories"
             :key="index"
             :item="item"
+            v-motion
+            :initial="{ opacity: 0, y: 100 }"
+            :visibleOnce="{ opacity: 1, y: 0 }"
+            :duration="1200"
+            :delay="index * 200"
           />
         </div>
       </div>
