@@ -31,6 +31,10 @@
 
           <h3
             class="text-white font-roboto font-bold text-center text-sm sm:text-base py-2"
+            v-motion
+            :initial="{ opacity: 0 }"
+            :visibleOnce="{ opacity: 1, y: 0 }"
+            :duration="1200"
           >
             <div v-if="slide.categories" class="flex justify-center">
               <div v-for="(category, index) in slide.categories">
@@ -45,12 +49,20 @@
 
           <h2
             v-html="slide.title"
+            v-motion
+            :initial="{ opacity: 0 }"
+            :visibleOnce="{ opacity: 1, y: 0 }"
+            :duration="1200"
             class="text-white max-w-2xl font-roboto font-bold text-center sm:text-5xl text-2xl pb-4 sm:pb-8"
           ></h2>
 
           <div class="text-center py-4 sm:py-0 !z-[999] relative">
             <NuxtLink :to="slide.url">
               <button
+                v-motion
+                :initial="{ opacity: 0, y: 100 }"
+                :visibleOnce="{ opacity: 1, y: 0 }"
+                :duration="1200"
                 class="btn btn-outline font-roboto font-thin border-white text-white"
               >
                 {{ slide.buttonMessage }}
