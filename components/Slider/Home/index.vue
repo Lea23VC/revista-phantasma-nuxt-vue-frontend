@@ -60,7 +60,7 @@
             <NuxtLink :to="slide.url">
               <button
                 v-motion
-                :initial="{ opacity: 0, y: 100 }"
+                :initial="{ opacity: 0 }"
                 :visibleOnce="{ opacity: 1, y: 0 }"
                 :duration="1200"
                 class="btn btn-outline font-roboto font-thin border-white text-white"
