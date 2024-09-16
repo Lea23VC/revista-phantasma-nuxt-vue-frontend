@@ -37,12 +37,21 @@
             :visibleOnce="{ opacity: 1, y: 0 }"
             :duration="1200"
           >
-            <div v-if="slide.categories" class="flex justify-center">
-              <div v-for="(category, index) in slide.categories">
-                <NuxtLink :to="'/phantasma/' + category.slug">{{
-                  category.name
-                }}</NuxtLink>
-                {{ index < slide.categories.length - 1 ? ' - ' : '' }}
+            <div v-if="slide.categories" class="flex flex-wrap justify-center">
+              <!-- Grid layout for categories, 3 per row -->
+              <div
+                v-for="(category, index) in slide.categories"
+                :key="index"
+                class="flex items-center space-x-1 mx-1"
+              >
+                <NuxtLink
+                  :to="'/phantasma/' + category.slug"
+                  class="whitespace-nowrap"
+                >
+                  {{ category.name }}
+                </NuxtLink>
+                <span v-if="index < slide.categories.length - 1">-</span>
+                <!-- Separator with hyphen -->
               </div>
             </div>
             <div v-else>{{ slide.subtitle }}</div>
