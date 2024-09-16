@@ -22,7 +22,7 @@
         class="gap-4 flex flex-col"
         v-motion
         :initial="{ opacity: 0 }"
-        :visibleOnce="{ opacity: 1, y: 0 }"
+        :enter="{ opacity: 1, y: 0 }"
         :duration="1000"
       >
         <h2 class="text-black text-center">{{ title ?? 'PHANTASMA' }}</h2>
