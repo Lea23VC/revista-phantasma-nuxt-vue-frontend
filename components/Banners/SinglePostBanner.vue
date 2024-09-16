@@ -18,7 +18,13 @@
     <div
       class="relative font-lulo-clean-one text-xl sm:text-2xl md:text-4xl lg:text-5xl"
     >
-      <div class="gap-4 flex flex-col">
+      <div
+        class="gap-4 flex flex-col"
+        v-motion
+        :initial="{ opacity: 0 }"
+        :visibleOnce="{ opacity: 1, y: 0 }"
+        :duration="1000"
+      >
         <h2 class="text-black text-center">{{ title ?? 'PHANTASMA' }}</h2>
         <h2 class="text-white text-center">{{ title ?? 'PHANTASMA' }}</h2>
       </div>

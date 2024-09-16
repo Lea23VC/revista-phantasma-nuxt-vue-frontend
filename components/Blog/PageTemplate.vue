@@ -80,6 +80,7 @@ if (isAuthor && data.value.posts && data.value.posts.data.length > 0) {
 const page = ref(data.value.posts?.paginatorInfo?.currentPage || 1);
 const route = useRoute();
 const router = useRouter();
+const config = useRuntimeConfig();
 
 watch(page, (newPage) => {
   // Base path for the blog
@@ -119,10 +120,10 @@ const backgroundImage = ref(
 async function logIp(authorName: string) {
   const visitedUrl = window.location.href; // Get the full URL of the post
   // Check if the post contains the required names
-  if (shoudLogIpByAuthor(authorName)) {
+  if (shoudLogIpByAuthor(authorName, config)) {
     try {
       // Send the request without blocking SSR
-      await registerLog(visitedUrl);
+      await registerLog(visitedUrl, config);
       console.log('IP log saved');
     } catch (error) {
       console.error('Error saving IP log:', error);

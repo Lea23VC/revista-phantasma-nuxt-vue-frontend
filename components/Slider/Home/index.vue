@@ -26,6 +26,7 @@
           :backgroundImage="slide.backgroundImage"
           :position="slide.position"
           :blur="slide.blur"
+          :backgroundPosition="slide.backgroundPosition"
         >
           <!-- Slide content -->
 
@@ -102,6 +103,7 @@ function getPosition(index: number) {
 const slides = posts.map((post, index) => ({
   name: post.title,
   backgroundImage: post.featured_image.original_url,
+  backgroundPosition: post.featured_image.positions.banner,
   position: getPosition(index),
   categories: post.categories,
   subtitle: 'test',

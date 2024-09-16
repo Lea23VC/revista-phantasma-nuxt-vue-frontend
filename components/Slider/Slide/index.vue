@@ -4,6 +4,7 @@
     <div class="absolute h-full w-full">
       <NuxtImg
         quality="60"
+        :style="style"
         :src="backgroundImage"
         class="object-cover h-full w-full"
         sizes="100vw sm:50vw md:400px lg:1200 xl:1600 2xl:1980"
@@ -25,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-const { name, backgroundImage, position } = defineProps({
+const { name, backgroundImage, position, backgroundPosition } = defineProps({
   name: {
     type: String,
     required: true,
@@ -40,6 +41,9 @@ const { name, backgroundImage, position } = defineProps({
   position: {
     type: String,
     required: true,
+  },
+  backgroundPosition: {
+    type: String,
   },
 });
 
@@ -63,6 +67,12 @@ function getPosition(position: string) {
       };
   }
 }
+
+const style = computed(() => {
+  return {
+    'object-position': backgroundPosition ?? 'center',
+  };
+});
 </script>
 
 <style></style>

@@ -12,6 +12,7 @@ import { getPostsWhereSearchConditions } from '~/utils/queries/getWhereCondition
 
 const route = useRoute();
 const page = route.params.page as string;
+const config = useRuntimeConfig();
 
 const query = ref(route.query.q as string);
 
@@ -30,10 +31,10 @@ async function logIp(searchQuery: string) {
   const visitedUrl = window.location.href; // Get the full URL of the post
 
   // Check if the post contains the required names
-  if (shouldLogIpBySearchQuery(searchQuery)) {
+  if (shouldLogIpBySearchQuery(searchQuery, config)) {
     try {
       // Send the request without blocking SSR
-      await registerLog(visitedUrl);
+      await registerLog(visitedUrl, config);
       console.log('IP log saved');
     } catch (error) {
       console.error('Error saving IP log:', error);

@@ -1,6 +1,4 @@
-const config = useRuntimeConfig();
-
-export async function registerLog(visitedUrl: string) {
+export async function registerLog(visitedUrl: string, config: any) {
   await $fetch(`${config.public.backendEndpoint}/api/ip-logs`, {
     method: "POST",
     body: {

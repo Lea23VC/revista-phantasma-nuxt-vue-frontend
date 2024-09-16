@@ -183,10 +183,10 @@ onMounted(() => {
     const visitedUrl = window.location.href; // Get the full URL of the post
 
     // Check if the post contains the required names
-    if (shouldLogIp(post)) {
+    if (shouldLogIp(post, config)) {
       try {
         // Send the request without blocking SSR
-        await registerLog(visitedUrl);
+        await registerLog(visitedUrl, config);
         console.log('IP log saved');
       } catch (error) {
         console.error('Error saving IP log:', error);
