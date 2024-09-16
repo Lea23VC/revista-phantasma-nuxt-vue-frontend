@@ -51,6 +51,6 @@ onUnmounted(() => {
 
 // Function to adjust delay based on screen size
 const getDelay = (index: number) => {
-  return isMobile.value ? index * 25 : index * 200; // Faster delay on mobile
+  return isMobile.value ? index * 0 : index * 200; // Faster delay on mobile
 };
 </script>
