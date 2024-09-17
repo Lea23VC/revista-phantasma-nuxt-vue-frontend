@@ -98,7 +98,7 @@ watch(page, (newPage) => {
 
 // Watch for changes in variables
 watch(
-  variables,
+  () => variables, // Use a getter to watch the variables
   async () => {
     refresh();
   },
