@@ -24,7 +24,7 @@
             >
           </div>
           <div>
-            <h3 class="text-2xl text-white">{{ item.title }}</h3>
+            <h3 class="text-lg sm:text-2xl text-white">{{ item.title }}</h3>
           </div>
         </div>
       </div>
