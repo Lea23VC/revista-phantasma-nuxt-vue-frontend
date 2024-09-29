@@ -62,6 +62,7 @@ export default defineNuxtConfig({
     "nuxt-gtag",
     "@formkit/nuxt",
     "@vueuse/motion/nuxt",
+    "@nuxtjs/device",
   ],
 
   formkit: {
