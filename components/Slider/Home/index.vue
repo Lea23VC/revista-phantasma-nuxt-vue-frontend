@@ -73,7 +73,7 @@
                 :initial="{ opacity: 0 }"
                 :visibleOnce="{ opacity: 1, y: 0 }"
                 :duration="1200"
-                class="btn btn-outline font-roboto font-thin border-white text-white"
+                class="btn btn-outline font-roboto font-thin hover:border-white hover:bg-black hover:text-white text-white"
               >
                 {{ slide.buttonMessage }}
               </button></NuxtLink
