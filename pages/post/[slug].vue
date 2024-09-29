@@ -102,7 +102,9 @@
                 </div>
 
                 <div>
-                  <SocialSharingLink url="google.cl" />
+                  <SocialSharingLink
+                    :url="'https://phantasma.cl' + route.fullPath"
+                  />
                 </div>
               </div>
             </div>
